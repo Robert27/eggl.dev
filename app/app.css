@@ -1,0 +1,258 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* We're removing the dark mode variant since we're standardizing on dark mode */
+
+/* Base theme (using dark colors) */
+@theme {
+	--color-background: #18181b;
+	--color-background-dark: #131315;
+	--color-foreground: #fafafa;
+
+	--color-primary: #fafafa;
+	--color-primary-foreground: #18181b;
+
+	--color-secondary: #ff106c;
+	--color-secondary-foreground: #fafafa;
+
+	--color-tertiary: #fafafa;
+	--color-tertiary-foreground: #18181b;
+
+	--color-accent: oklch(0.6544 0.1825 237.75);
+	--color-accent-background: oklch(0.5897 0.1505 237.75);
+
+	--color-neo-border: #fafafa;
+	--color-neo-foreground: #fafafa;
+	--color-neo-background: #18181b;
+	--color-neo-accent: #888892;
+
+	--color-muted: #3f3f46;
+	--color-border: #3f3f46;
+
+	--shadow-neo: 4px 4px 0px 0px var(--color-neo-border);
+	--shadow-neo-lg: 8px 8px 0px 0px var(--color-neo-border);
+	--shadow-neo-thin: 4px 4px 0px 0px var(--color-neo-border);
+
+	--grid-line-color: 0 0% 100% / 0.1;
+}
+
+html,
+body {
+	font-family: var(--font-geist), sans-serif;
+	@apply bg-background text-foreground;
+}
+
+/* Ensure dark theme is applied immediately */
+html.dark,
+html.dark body {
+	background-color: #18181b;
+	color: #fafafa;
+}
+
+html.dark .text-foreground {
+	color: #fafafa;
+}
+
+html.dark .bg-background {
+	background-color: #18181b;
+}
+
+.font-mono,
+code,
+pre,
+kbd,
+samp {
+	font-family:
+		var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-mono tracking-tight;
+}
+
+@utility neo-card {
+	@apply bg-background border-2 border-neo-border shadow-neo transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg;
+}
+
+@utility neo-card-static {
+	@apply bg-background border-2 border-neo-border shadow-neo;
+}
+
+@utility legalsection {
+	/* Legal section typography styles */
+	& h2 {
+		@apply text-2xl font-black mt-6 mb-3;
+	}
+
+	& h3 {
+		@apply text-xl font-bold mt-4 mb-2;
+	}
+
+	& h4 {
+		@apply text-lg font-semibold mt-3 mb-2;
+	}
+
+	& p {
+		@apply mb-4 text-base leading-relaxed;
+	}
+}
+@utility list-disc {
+	list-style-type: disc;
+}
+
+@utility list-outside {
+	list-style-position: outside;
+}
+
+@utility neo-grid-bg {
+	@apply bg-secondary;
+	background-image:
+		linear-gradient(
+			to right,
+			hsla(var(--grid-line-color)) 1.5px,
+			transparent 1.5px
+		),
+		linear-gradient(
+			to bottom,
+			hsla(var(--grid-line-color)) 1.5px,
+			transparent 1.5px
+		);
+	background-size: 50px 50px;
+	position: relative;
+}
+
+@utility neo-button {
+	@apply bg-background px-6 py-3 border-2 border-neo-border shadow-neo font-mono font-bold transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg active:translate-x-[0px] active:translate-y-[0px] active:shadow-neo disabled:opacity-50;
+}
+
+@utility neo-button-lite {
+	@apply bg-transparent px-4 py-2 border-2 border-transparent font-mono text-sm transition-all hover:bg-background hover:border-neo-border hover:shadow-neo hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-neo disabled:opacity-50;
+}
+@utility container-custom {
+	@apply container mx-auto px-4 md:px-8;
+}
+
+@utility section {
+	@apply py-16 md:py-24;
+}
+
+/* Prose styles for markdown content */
+@utility prose {
+	@apply text-foreground;
+
+	& h1 {
+		@apply text-3xl font-bold font-mono mb-6 mt-8;
+	}
+
+	& h2 {
+		@apply text-2xl font-bold font-mono mb-4 mt-6;
+	}
+
+	& h3 {
+		@apply text-xl font-bold font-mono mb-3 mt-5;
+	}
+
+	& h4 {
+		@apply text-lg font-bold font-mono mb-2 mt-4;
+	}
+
+	& p {
+		@apply mb-4 leading-relaxed;
+	}
+
+	& ul {
+		@apply mb-4 list-disc list-outside ml-6;
+	}
+
+	& ol {
+		@apply mb-4 list-decimal list-outside ml-6;
+	}
+
+	& li {
+		@apply mb-1;
+	}
+
+	& blockquote {
+		@apply border-l-4 border-accent pl-4 italic my-4;
+	}
+
+	& code {
+		@apply bg-muted px-1 py-0.5 rounded text-sm font-mono;
+	}
+
+	& pre {
+		@apply bg-muted p-4 rounded-lg overflow-x-auto mb-4;
+	}
+
+	& pre code {
+		@apply bg-transparent p-0;
+	}
+
+	& a {
+		@apply text-accent hover:underline transition-colors;
+	}
+
+	& strong {
+		@apply font-bold;
+	}
+
+	& em {
+		@apply italic;
+	}
+
+	& hr {
+		@apply border-t border-border my-8;
+	}
+
+	& table {
+		@apply w-full border-collapse mb-4;
+	}
+
+	& th {
+		@apply border border-border px-4 py-2 text-left font-bold;
+	}
+
+	& td {
+		@apply border border-border px-4 py-2;
+	}
+
+	& img {
+		@apply max-w-full h-auto rounded-lg my-4;
+	}
+}
+
+/* Custom scanning animation for futuristic loading effects */
+@keyframes scan {
+	0% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+/* Projects page specific styles */
+@utility projects-grid {
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+@utility projects-list {
+	@apply space-y-6;
+}
+
+@utility category-badge {
+	@apply px-3 py-1 text-xs font-mono border-2;
+}
+
+@utility search-input {
+	@apply w-full px-4 py-3 bg-background border-2 border-neo-border shadow-neo font-mono focus:outline-none focus:border-accent;
+}
