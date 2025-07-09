@@ -81,6 +81,7 @@ export const projects: Project[] = [
 			'This personal portfolio website built with Next.js, featuring a modern neo-brutalist design with smooth animations and interactive elements. The site showcases my projects, skills, and experience in an engaging way.',
 		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
 		demo: 'https://eggl.dev',
+		github: 'https://github.com/robert27/eggl.dev',
 		image: 'images/personal.webp',
 		category: 'web',
 		showOnMain: false

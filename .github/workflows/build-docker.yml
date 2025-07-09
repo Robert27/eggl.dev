@@ -71,6 +71,7 @@ jobs:
           build-args: |
             NEXT_PUBLIC_ADDRESS=${{ secrets.PUBLIC_ADDRESS }}
             NEXT_PUBLIC_PHONE=${{ secrets.PUBLIC_PHONE }}
+            NEXT_PUBLIC_GIT_SHA=${{ github.sha }}
 
   deploy-to-coolify:
     name: Deploy to Coolify

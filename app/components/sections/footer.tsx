@@ -1,8 +1,9 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, GithubIcon, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear()
+	const gitSha = process.env.NEXT_PUBLIC_GIT_SHA ?? 'development'
 
 	return (
 		<footer className="py-12 border-t-2 border-neo-border bg-accent-background">
@@ -57,12 +58,36 @@ const Footer = () => {
 					</div>
 				</div>
 
-				<p className="text-xs text-center mt-10 text-muted-foreground  opacity-90 hover:opacity-100 transition-opacity cursor-default">
-					🤫 Psst! This isn't some boring template <br /> Every pixel was
-					crafted with care and at least three cups of coffee. ;)
-					<br />
-					The source code will be available soon!
-				</p>
+				<div className="text-xs text-center mt-10 text-muted-foreground">
+					<div className="mb-4">
+						<p className="opacity-90 hover:opacity-100 transition-opacity">
+							🤫 Psst! This isn't some boring template <br /> Every pixel was
+							crafted with care and at least three cups of coffee. ;)
+						</p>
+					</div>
+					<a
+						href={`https://github.com/Robert27/eggl.dev/commit/${gitSha}`}
+						target="_blank"
+						className="group"
+						rel="noopener noreferrer"
+						aria-label="View commit on GitHub"
+					>
+						<div className="inline-flex items-center gap-2 neo-card px-4 py-2">
+							<div className="flex items-center gap-2">
+								<GithubIcon
+									size={12}
+									className="group-hover:scale-110 group-hover:text-accent transition-all duration-200"
+								/>
+								<span className="font-mono text-[0.7rem]">
+									Commit SHA:{' '}
+									<span className="text-accent font-bold">
+										{gitSha.slice(0, 7)}
+									</span>
+								</span>
+							</div>
+						</div>
+					</a>
+				</div>
 			</div>
 		</footer>
 	)
