@@ -18,7 +18,8 @@ const nextConfig = {
 	},
 	compiler: {
 		removeConsole: process.env.NODE_ENV === 'production'
-	}
+	},
+	poweredByHeader: false
 }
 
 export default withContentlayer(nextConfig)

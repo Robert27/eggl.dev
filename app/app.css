@@ -19,6 +19,7 @@
 	--color-tertiary-foreground: #18181b;
 
 	--color-accent: oklch(0.6544 0.1825 237.75);
+	--color-accent-light: oklch(0.68 0.1278 237.03);
 	--color-accent-background: oklch(0.5897 0.1505 237.75);
 
 	--color-neo-border: #fafafa;
@@ -151,7 +152,7 @@ h6 {
 	}
 
 	& h2 {
-		@apply text-2xl font-bold font-mono mb-4 mt-6;
+		@apply text-2xl font-bold font-mono mb-4 mt-6 text-accent-light;
 	}
 
 	& h3 {
