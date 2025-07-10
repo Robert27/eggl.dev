@@ -41,4 +41,4 @@ Visit [eggl.dev](https://eggl.dev) to see the website in action.
 
 ## 📄 License
 
-This project is private and personal. All rights reserved.
+This project is licensed under the [GNU General Public License v3.0](LICENSE).

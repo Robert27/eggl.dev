@@ -4,7 +4,7 @@ date: "2025-07-10"
 description: "When your community needs member cards, you build a full-stack crypto system with QR codes and Wallet integration. Obviously."
 ---
 
-So my university club [Neuland Ingolstadt e.V.](https://neuland.ingolstadt.de) needed member cards. Simple, right? Just print some cards with names on them. 
+So my university club [Neuland Ingolstadt e.V.](https://neuland-ingolstadt.de) needed member cards. Simple, right? Just print some cards with names on them. 
 
 Nope. I built a full-stack cryptographic identity system with QR codes directly in our Neuland Next App. But also Apple and Google Wallet integration, and enough security to make a bank jealous. Because apparently, that's what happens when you have exam stress and don't want to study.
 
@@ -26,7 +26,7 @@ The thing generates cryptographically signed QR codes that you can scan with you
 
 - **QR Codes with Cryptography**: Because regular QR codes are too mainstream. These are signed with ECDSA P-256 so they cannot be modified without being detected. Totally overkill for "is this person actually in our club?"
 
-- **Wallet Integration**: Because apparently, students need to add their club membership to their digital wallet. I'm not sure why, but it's there. Since we cannot rotate wallet QR codes like in the app, I added a toggle in the scanner to disallow wallet scanning for high security events.
+- **Wallet Integration**: Everyone seems to want their club membership in their digital wallet, so I made it happen. Since wallet QR codes can’t rotate like those in the app, the scanner frontend includes a toggle to disable wallet scanning during high-security events. (What even is a high-security event?)
 
 - **Real-time Camera Scanning**: The frontend has live camera feed scanning. If valid QR codes are detected, it shows the encoded member information. But also detects invalid or duplicate QR codes. And of course there are many many settings to configure the scanner, like the camera resolution, the scanning interval or even sound effects.
 
@@ -36,7 +36,9 @@ This data can be exported as CSV, which might be useful for event organizers, bu
 - **Time-based QR Rotation**: To prevent replay attacks and ensure data freshness, the QR codes in the app rotate every few days.
 The app also includes smooth animations that make it easy to spot attempts to deceive the system, for example by showing a static screenshot instead of a live QR code.
 
-- **Offline and Public Access**: Since the scanner verifies QR codes using a public key, it works entirely offline—fast and without any server-side processing. There’s no need for a login system, which means anyone can scan the QR codes—from club members to curious visitors who just want to see how it works.
+- **Offline Scanning**: The scanner verifies QR codes using a public key, allowing it to function entirely offline, fast, reliable and without any server-side processing.
+
+- **Public Access**: Because no login system is required, the scanner is open to everyone. Whether you're a club member or just a curious visitor, anyone can scan and explore how the system works.
 
 ## The Tech Stack
 
