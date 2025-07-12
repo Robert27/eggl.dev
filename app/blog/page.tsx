@@ -19,7 +19,7 @@ const BlogCard = ({ post, index }: BlogCardProps) => {
 	})
 
 	const wordCount = post.body.raw.split(' ').length
-	const readingTime = Math.ceil(wordCount / 200)
+	const readingTime = Math.ceil(wordCount / 150)
 
 	const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
 		year: 'numeric',
@@ -66,16 +66,16 @@ const BlogCard = ({ post, index }: BlogCardProps) => {
 					/>
 
 					<div className="relative z-10">
-						<div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground font-mono">
-							<div className="flex items-center gap-1">
+						<div className="flex items-center gap-4 mb-4 text-xs text-muted-foreground font-mono">
+							<div className="flex items-center gap-2">
 								<Calendar size={14} />
 								<span>{formattedDate}</span>
 							</div>
-							<div className="flex items-center gap-1">
+							<div className="flex items-center gap-2">
 								<Clock size={14} />
 								<span>{readingTime} min read</span>
 							</div>
-							<div className="flex items-center gap-1">
+							<div className="flex items-center gap-2">
 								<BookOpen size={14} />
 								<span>{wordCount} words</span>
 							</div>

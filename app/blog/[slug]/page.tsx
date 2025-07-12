@@ -22,11 +22,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 	// biome-ignore lint/correctness/useHookAtTopLevel: TODO
 	const MDXContent = useMDXComponent(post.body.code)
 
-	// Calculate reading time and word count
 	const wordCount = post.body.raw.split(' ').length
-	const readingTime = Math.ceil(wordCount / 100)
+	const readingTime = Math.ceil(wordCount / 150)
 
-	// Format date
 	const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
 		year: 'numeric',
 		month: 'long',
