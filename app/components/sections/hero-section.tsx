@@ -260,36 +260,36 @@ const HeroSection = () => {
 								<div className="absolute -bottom-2 left-0 w-24 h-0.5 bg-accent/50" />
 							</motion.div>
 
-                                                        {/* Call to action buttons with enhanced styling */}
-                                                        <div className="flex flex-col sm:flex-row gap-6">
-                                                                <motion.a
-                                                                        href="/blog"
-                                                                        className="group relative flex items-center bg-background text-foreground px-6 py-3 text-sm sm:text-base border-2 border-foreground shadow-[6px_6px_0px_0px_rgba(250,250,250,0.8)] font-mono font-bold transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0px_0px_rgba(250,250,250,0.8)] overflow-hidden"
-                                                                        whileHover={{ scale: 1.02 }}
-                                                                        whileTap={{ scale: 0.98 }}
-                                                                >
-                                                                        <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                                                                        <span className="relative">Read My Blog</span>
-                                                                        <ChevronRight
-                                                                                size={20}
-                                                                                className="ml-2 group-hover:translate-x-1 transition-transform relative"
-                                                                        />
-                                                                </motion.a>
+							{/* Call to action buttons with enhanced styling */}
+							<div className="flex flex-col sm:flex-row gap-6 justify-start">
+								<motion.a
+									href="/blog"
+									className="group relative flex items-center bg-background text-foreground px-6 py-3 text-sm sm:text-base border-2 border-foreground shadow-[6px_6px_0px_0px_rgba(250,250,250,0.8)] font-mono font-bold transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0px_0px_rgba(250,250,250,0.8)] overflow-hidden w-fit"
+									whileHover={{ scale: 1.02 }}
+									whileTap={{ scale: 0.98 }}
+								>
+									<div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+									<span className="relative">Read My Blog</span>
+									<ChevronRight
+										size={20}
+										className="ml-2 group-hover:translate-x-1 transition-transform relative"
+									/>
+								</motion.a>
 
-                                                                <motion.button
-                                                                        className="group relative flex items-center bg-background text-foreground px-6 py-3 text-sm sm:text-base border-2 border-foreground shadow-[6px_6px_0px_0px_rgba(250,250,250,0.8)] font-mono font-bold transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0px_0px_rgba(250,250,250,0.8)] overflow-hidden"
-                                                                        onClick={(e) => handleHashLinkClick(e, 'contact')}
-                                                                        whileHover={{ scale: 1.02 }}
-                                                                        whileTap={{ scale: 0.98 }}
-                                                                >
-                                                                        <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                                                                        <span className="relative">Let's Connect</span>
-                                                                        <ChevronRight
-                                                                                size={20}
-                                                                                className="ml-2 group-hover:translate-x-1 transition-transform relative"
-                                                                        />
-                                                                </motion.button>
-                                                        </div>
+								<motion.button
+									className="group relative flex items-center bg-background text-foreground px-6 py-3 text-sm sm:text-base border-2 border-foreground shadow-[6px_6px_0px_0px_rgba(250,250,250,0.8)] font-mono font-bold transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0px_0px_rgba(250,250,250,0.8)] overflow-hidden w-fit"
+									onClick={(e) => handleHashLinkClick(e, 'contact')}
+									whileHover={{ scale: 1.02 }}
+									whileTap={{ scale: 0.98 }}
+								>
+									<div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+									<span className="relative">Let's Connect</span>
+									<ChevronRight
+										size={20}
+										className="ml-2 group-hover:translate-x-1 transition-transform relative"
+									/>
+								</motion.button>
+							</div>
 						</div>
 					</motion.div>
 
@@ -495,8 +495,8 @@ const HeroSection = () => {
 					animate={{ opacity: 1 }}
 					transition={{ delay: 3, duration: 0.5 }}
 				>
-                                        <button
-                                                className="bg-background p-3 sm:p-4 text-sm sm:text-base flex items-center justify-center border-2 border-foreground shadow-[4px_4px_0px_0px_rgba(250,250,250,1)] font-mono font-bold transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_rgba(250,250,250,1)] animate-bounce-slow text-foreground cursor-pointer"
+					<button
+						className="bg-background p-3 sm:p-4 text-sm sm:text-base flex items-center justify-center border-2 border-foreground shadow-[4px_4px_0px_0px_rgba(250,250,250,1)] font-mono font-bold transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_rgba(250,250,250,1)] animate-bounce-slow text-foreground cursor-pointer"
 						aria-label="Scroll down"
 						onClick={(e) => handleHashLinkClick(e, 'about')}
 						type="button"
