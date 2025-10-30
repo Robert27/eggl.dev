@@ -72,21 +72,3 @@ jobs:
             NEXT_PUBLIC_ADDRESS=${{ secrets.PUBLIC_ADDRESS }}
             NEXT_PUBLIC_PHONE=${{ secrets.PUBLIC_PHONE }}
             NEXT_PUBLIC_GIT_SHA=${{ github.sha }}
-
-  deploy-to-coolify:
-    name: Deploy to Coolify
-    runs-on: ubuntu-latest
-    needs: build-and-push-image
-    # Only run on main branch
-    if: github.ref == 'refs/heads/main'
-    permissions:
-      contents: read
-      deployments: write # Permission needed to update deployment status
-    environment: production # This triggers the automatic deployment creation
-    steps:
-      - name: Deploy to Coolify
-        uses: boredland/action-coolify-deployment@358520c6e1d38bb11bf45e80e59d332fe18d09c6
-        with:
-          coolify-url: ${{ secrets.COOLIFY_URL }}
-          api-key: ${{ secrets.COOLIFY_API_KEY }}
-          uuid: ${{ secrets.COOLIFY_UUID }}
