@@ -36,6 +36,17 @@ export const projects: Project[] = [
 		showOnMain: true
 	},
 	{
+		title: 'Campus Life Events',
+		description:
+			'A fullstack web application for managing and displaying campus events at TH Ingolstadt. Built with Rust, Redis and Next.js, it allows university clubs to create and manage events, while students can browse them in Neuland Next app.',
+		technologies: ['Rust', 'Next.js', 'Redis', 'TypeScript'],
+		github: 'https://github.com/neuland-ingolstadt/campus-life-events',
+		demo: 'https://cl.neuland.ing',
+		image: 'images/cle.webp',
+		category: 'fullstack',
+		showOnMain: false
+	},
+	{
 		title: 'Expo GitHub Cache',
 		description:
 			"A plugin that dramatically speeds up mobile app development by caching build files in GitHub Releases. Instead of waiting for full compilation every time, it reuses previously built versions when your code hasn't changed, saving significant development time.",
@@ -95,6 +106,26 @@ export const projects: Project[] = [
 		demo: 'https://neuland.app',
 		image: 'images/next-docs.webp',
 		category: 'web',
+		showOnMain: false
+	},
+	{
+		title: 'Trajectory Trace Product Page',
+		description:
+			'At e:fs TechHub, I developed the product page for Trajectory Trace, showcasing its features and benefits. It combines a Docusaurus-powered documentation site with a custom React frontpage, delivering a seamless user experience.',
+		technologies: ['React', 'Docusaurus', 'TypeScript', 'CSS'],
+		demo: 'https://disrupt.sdk-dev.efs.ai/docs/',
+		image: 'images/ttd.webp',
+		category: 'web',
+		showOnMain: false
+	},
+	{
+		title: 'Trajectory Trace',
+		description:
+			"At e:fs TechHub, I contributed to the development of Trajectory Trace, a cutting-edge platform for realtime traffic data processing and analysis. My work focused on enhancing the system's scalability and performance in both Rust backend and Next.js frontend.",
+		technologies: ['Rust', 'Next.js', 'TypeScript', 'MQTT', 'Kafka'],
+		image: 'images/tt.webp',
+		demo: 'https://disrupt.sdk-dev.efs.ai/',
+		category: 'fullstack',
 		showOnMain: false
 	}
 ]

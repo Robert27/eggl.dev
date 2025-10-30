@@ -4,15 +4,16 @@ import { notFound } from 'next/navigation'
 
 interface BlogPostLayoutProps {
 	children: React.ReactNode
-	params: { slug: string }
+	params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({
 	params
 }: {
-	params: { slug: string }
+	params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-	const post = allBlogs.find((p) => p.slug === params.slug)
+	const { slug } = await params
+	const post = allBlogs.find((p) => p.slug === slug)
 
 	if (!post) {
 		return {
@@ -102,11 +103,12 @@ const generateJsonLd = (post: (typeof allBlogs)[0]) => ({
 	keywords: ['blog', 'software development', 'technology', post.title]
 })
 
-export default function BlogPostLayout({
+export default async function BlogPostLayout({
 	children,
 	params
 }: BlogPostLayoutProps) {
-	const post = allBlogs.find((p) => p.slug === params.slug)
+	const { slug } = await params
+	const post = allBlogs.find((p) => p.slug === slug)
 
 	if (!post) {
 		notFound()
