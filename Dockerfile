@@ -22,7 +22,7 @@ ENV NEXT_PUBLIC_GIT_SHA=$NEXT_PUBLIC_GIT_SHA
 RUN realpath . 
 
 RUN npm run build:content
-RUN npm run build
+RUN npm run build --turbopack
 
 FROM node:24-alpine AS runner
 WORKDIR /app
