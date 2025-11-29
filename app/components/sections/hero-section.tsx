@@ -243,7 +243,7 @@ const HeroSection = () => {
 								transition={{ delay: 2, duration: 1 }}
 							>
 								<p className="text-xl text-foreground/90 max-w-2xl mb-12 leading-relaxed font-light">
-									Master's student in Computer Science focusing on{' '}
+									Full Stack Developer focusing on{' '}
 									<span className="text-accent font-normal">
 										Cloud Computing
 									</span>{' '}

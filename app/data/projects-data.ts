@@ -76,6 +76,23 @@ export const projects: Project[] = [
 		showOnMain: false
 	},
 	{
+		title: 'Neuland Kubernetes',
+		description:
+			'Built and manage the self-hosted K3s infrastructure for Neuland services using GitOps principles. The infrastructure handles deployment automation, monitoring, and scaling for all Neuland applications, ensuring high availability and efficient resource management.',
+		technologies: [
+			'Kubernetes',
+			'K3s',
+			'GitOps',
+			'FluxCD',
+			'Docker',
+			'Infrastructure'
+		],
+		github: 'https://github.com/neuland-ingolstadt/flux-infra',
+		image: 'images/k3s.webp',
+		category: 'tool',
+		showOnMain: false
+	},
+	{
 		title: 'Neuland Website',
 		description:
 			'The main landing page for the Neuland club, built with Next.js and Tailwind CSS. It serves as a showcase for our projects and provides information about the club and its events. I utilized a retro terminal style to effectively present our values, incorporating hidden features to enhance its appeal.',

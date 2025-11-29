@@ -2,7 +2,6 @@ import { allBlogs } from 'contentlayer/generated'
 import { BookOpen, Calendar, Clock, Home } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { useMDXComponent } from 'next-contentlayer2/hooks'
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -11,16 +10,19 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
+import { MDXContent } from './mdx-content'
 
 export const generateStaticParams = async () =>
 	allBlogs.map((p) => ({ slug: p.slug }))
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-	const post = allBlogs.find((p) => p.slug === params.slug)
+export default async function BlogPostPage({
+	params
+}: {
+	params: Promise<{ slug: string }>
+}) {
+	const { slug } = await params
+	const post = allBlogs.find((p) => p.slug === slug)
 	if (!post) return notFound()
-
-	// biome-ignore lint/correctness/useHookAtTopLevel: TODO
-	const MDXContent = useMDXComponent(post.body.code)
 
 	const wordCount = post.body.raw.split(' ').length
 	const readingTime = Math.ceil(wordCount / 150)
@@ -102,7 +104,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
 			{/* Article content */}
 			<div className="prose dark:prose-invert prose-lg max-w-none">
-				<MDXContent />
+				<MDXContent code={post.body.code} />
 			</div>
 		</article>
 	)

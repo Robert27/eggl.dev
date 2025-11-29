@@ -8,6 +8,7 @@ On November 5th, I had the chance to give a talk at our **Cookie Talks & code:to
 
 This blog post is a short recap from *my* perspective: how our setup works, why we built it, and what I tried to show on stage.
 
+[![Robert giving a talk at Cookie Talks & code:together](/images/k3s.webp)](/images/k3s.webp)
 ## Why we moved away from a single VPS
 
 When I joined Neuland, our entire infrastructure ran on a single VPS using Docker Compose.  
