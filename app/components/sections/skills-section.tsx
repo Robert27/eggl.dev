@@ -55,8 +55,8 @@ const SkillsSection = () => {
 			skills: [
 				{ short: 'VCS', full: 'Git' },
 				{ short: 'Cloud', full: 'Docker' },
-				{ short: 'Orch', full: 'CI/CD' },
-				{ short: 'Orch', full: 'Kubernetes' },
+				{ short: 'CI/CD', full: 'CI/CD' },
+				{ short: 'k8s', full: 'Kubernetes' },
 				{ short: 'Docs', full: 'Office' }
 			],
 			description:
