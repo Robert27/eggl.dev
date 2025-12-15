@@ -130,7 +130,7 @@ export const projects: Project[] = [
 		description:
 			'At e:fs TechHub, I developed the product page for Trajectory Trace, showcasing its features and benefits. It combines a Docusaurus-powered documentation site with a custom React frontpage, delivering a seamless user experience.',
 		technologies: ['React', 'Docusaurus', 'TypeScript', 'CSS'],
-		demo: 'https://disrupt.sdk-dev.efs.ai/docs/',
+		demo: 'https://city.dev.sdk-cloud.de/docs/',
 		image: 'images/ttd.webp',
 		category: 'web',
 		showOnMain: false
@@ -141,8 +141,18 @@ export const projects: Project[] = [
 			"At e:fs TechHub, I contributed to the development of Trajectory Trace, a cutting-edge platform for realtime traffic data processing and analysis. My work focused on enhancing the system's scalability and performance in both Rust backend and Next.js frontend.",
 		technologies: ['Rust', 'Next.js', 'TypeScript', 'MQTT', 'Kafka'],
 		image: 'images/tt.webp',
-		demo: 'https://disrupt.sdk-dev.efs.ai/',
+		demo: 'https://city.dev.sdk-cloud.de/',
 		category: 'fullstack',
+		showOnMain: false
+	},
+	{
+		title: 'Home Assistant Integration',
+		description:
+			'To quickly retrieve the current meal plans of the TH Ingolstadt canteens, I developed a Home Assistant integration that fetches data from the Neuland API and exposes it via sensors. The integration also allows customization of locations and price groups.',
+		technologies: ['Home Assistant', 'Python', 'GraphQL'],
+		image: 'images/ha.webp',
+		github: 'https://github.com/robert27/hacs-thi-mensa',
+		category: 'tool',
 		showOnMain: false
 	}
 ]
