@@ -11,7 +11,7 @@ export interface GitHubData {
 
 let cachedGitHubData: GitHubData | null = null
 let lastFetchTime = 0
-const CACHE_DURATION = 30 * 60 * 1000
+const CACHE_DURATION = 10 * 60 * 1000
 
 export async function getGitHubData(): Promise<GitHubData> {
 	const now = Date.now()
