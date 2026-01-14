@@ -37,7 +37,7 @@ const Footer = () => {
 						</a>
 
 						<a
-							href="mailto:robert@eggl.dev"
+							href="mailto:info@eggl.dev"
 							className="neo-button p-3 !aspect-square flex items-center justify-center"
 							aria-label="Email"
 						>

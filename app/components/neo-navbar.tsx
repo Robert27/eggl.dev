@@ -36,7 +36,7 @@ const Navbar = () => {
 			href: 'https://linkedin.com/in/roberteggl',
 			label: 'LinkedIn'
 		},
-		{ icon: Mail, href: 'mailto:robert@eggl.dev', label: 'Email' }
+		{ icon: Mail, href: 'mailto:info@eggl.dev', label: 'Email' }
 	]
 
 	interface NavLinkProps {

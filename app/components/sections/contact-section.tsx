@@ -38,7 +38,7 @@ const ContactSection = () => {
 		if (hoverIndex !== null) {
 			const newLine =
 				hoverIndex === 0
-					? '> Opening mail client to robert@eggl.dev'
+					? '> Opening mail client to info@eggl.dev'
 					: hoverIndex === 1
 						? '> Connecting to GitHub repository'
 						: hoverIndex === 2
@@ -180,7 +180,7 @@ const ContactSection = () => {
 
 							<div className="space-y-6">
 								<motion.a
-									href="mailto:robert@eggl.dev"
+									href="mailto:info@eggl.dev"
 									className="flex items-center group bg-background p-4 border-2 border-foreground shadow-[4px_4px_0px_0px_rgba(250,250,250,0.8)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_rgba(250,250,250,0.8)]"
 									onMouseEnter={() => setHoverIndex(0)}
 									onMouseLeave={() => setHoverIndex(null)}
@@ -192,7 +192,7 @@ const ContactSection = () => {
 									</div>
 									<div className="flex-1">
 										<span className="block text-xl">Email</span>
-										<span className="text-foreground/70">robert@eggl.dev</span>
+										<span className="text-foreground/70">info@eggl.dev</span>
 									</div>
 									<ArrowUpRight
 										size={20}

@@ -20,7 +20,7 @@ export const imprintData: ImprintData = {
 		title: 'Kontaktinformationen',
 		name: 'Robert Eggl',
 		address: process.env.NEXT_PUBLIC_ADDRESS ?? '',
-		email: 'robert@eggl.dev',
+		email: 'info@eggl.dev',
 		phone: process.env.NEXT_PUBLIC_PHONE ?? ''
 	},
 	legalInformation: {

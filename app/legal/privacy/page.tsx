@@ -215,7 +215,7 @@ const Privacy = () => {
 							<br />
 							<br />
 							Telefon: {imprintData.contactInformation.phone} <br />
-							E-Mail: robert@eggl.dev <br />
+							E-Mail: info@eggl.dev <br />
 							<br />
 							Verantwortliche Stelle ist die natürliche oder juristische Person,
 							die allein oder gemeinsam mit anderen über die Zwecke und Mittel
