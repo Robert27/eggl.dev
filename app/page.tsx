@@ -1,6 +1,6 @@
 import { allBlogs } from 'contentlayer/generated'
-import NeoMarquee from '@/components/neo-marquee'
 import { JsonLd } from '@/components/json-ld'
+import NeoMarquee from '@/components/neo-marquee'
 import AboutSection from '@/components/sections/about-section'
 import CareerSection from '@/components/sections/career-section'
 import ContactSection from '@/components/sections/contact-section'
