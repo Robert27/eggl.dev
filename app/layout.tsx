@@ -93,14 +93,14 @@ export default function RootLayout({
 					title="RSS Feed for Robert Eggl's Blog"
 					href="https://eggl.dev/feed"
 				/>
+				<script
+					type="application/ld+json"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: not a problem
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(jsonLd).replace(/</g, '\\u003c')
+					}}
+				/>
 			</head>
-			<script
-				type="application/ld+json"
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: not a problem
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLd).replace(/</g, '\\u003c')
-				}}
-			/>
 			<body className="flex flex-col min-h-screen w-full max-w-screen overflow-x-hidden min-w-0">
 				<Provider>
 					<header>
