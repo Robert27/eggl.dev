@@ -118,7 +118,8 @@ const Privacy = () => {
 						</p>
 						<h2>2. Hosting</h2>
 						<p>
-							Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
+							Wir hosten und stellen die Inhalte unserer Website über folgenden
+							Anbieter bereit:
 						</p>
 						<h3>Vercel</h3>
 						<p>
@@ -150,42 +151,6 @@ const Privacy = () => {
 							der gewährleistet, dass dieser die personenbezogenen Daten unserer
 							Websitebesucher nur nach unseren Weisungen und unter Einhaltung
 							der DSGVO verarbeitet.
-						</p>
-						<h2>Content Delivery Networks (*)</h2>
-						<h3>Cloudflare</h3>
-						<p>
-							Wir nutzen für unser Onlineangebot ein sogenanntes Content
-							Delivery Network (CDN), das von Cloudflare, Inc., 101 Townsend St,
-							San Francisco, CA 94107, USA, bereitgestellt wird. Cloudflare ist
-							nach dem Privacy-Shield-Abkommen zertifiziert und verpflichtet
-							sich damit zur Einhaltung der europäischen Datenschutzvorgaben.
-							<br />
-							Die dabei anfallende Datenverarbeitung erfolgt ausschließlich zur
-							Gewährleistung dieser technischen Funktionen sowie zur Optimierung
-							unseres Webangebots. Rechtsgrundlage für die Nutzung des CDN ist
-							unser berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f
-							DSGVO an einer performanten und nutzerfreundlichen Bereitstellung
-							unseres Onlineauftritts, ohne selbst ein solches CDN betreiben zu
-							müssen. Ausführliche Informationen zu den Datenschutzmaßnahmen von
-							Cloudflare lassen sich{' '}
-							<a
-								href="https://www.cloudflare.com/cloudflare_customer_SCCs-German.pdf"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-tertiary underline"
-							>
-								hier
-							</a>{' '}
-							und dem Privacy-Shield-Abkommen{' '}
-							<a
-								href="https://www.privacyshield.gov/participant?id=a2zt0000000GnZKAA0&status=Active"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-tertiary underline"
-							>
-								dort{' '}
-							</a>
-							finden.
 						</p>
 						<h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
 						<h3>Datenschutz</h3>
@@ -465,9 +430,7 @@ const Privacy = () => {
 							>
 								https://www.e-recht24.de
 							</a>
-							<br /> Eine Anpassung durch den Betreiber der Webiste ist erfolgt,
-							entsprechende neue Abschnitte sind mit (*) in der jeweiligen
-							Überschrift gekennzeichnet.
+							<br /> Eine Anpassung durch den Betreiber der Website ist erfolgt.
 						</p>
 					</div>
 				</div>
