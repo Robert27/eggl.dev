@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import './app.css'
 import { Space_Grotesk, Space_Mono } from 'next/font/google'
+import { JsonLd } from './components/json-ld'
 import Navbar from './components/neo-navbar'
 import Footer from './components/sections/footer'
 import Provider from './contexts/provider'
+import { createWebsiteJsonLd } from './lib/structured-data'
 
 export const metadata: Metadata = {
 	title: "Robert Eggl - Software Engineer & Master's Student",
@@ -43,33 +45,7 @@ const mono = Space_Mono({
 	variable: '--font-mono'
 })
 
-const jsonLd = {
-	'@context': 'https://schema.org',
-	'@type': 'Person',
-	name: 'Robert Eggl',
-	url: 'https://eggl.dev',
-	image: 'https://github.com/Robert27.png',
-	sameAs: [
-		'https://www.linkedin.com/in/roberteggl',
-		'https://github.com/Robert27',
-		'https://gitlab.com/roberteggl',
-		'https://x.com/roberteggl',
-		'https://bsky.app/profile/eggl.dev',
-		'https://www.facebook.com/eggl.robert/',
-		'https://stackoverflow.com/users/15148240/robert-eggl'
-	],
-	jobTitle: "Software Engineer & Master's Student",
-	worksFor: {
-		'@type': 'CollegeOrUniversity',
-		name: 'Technische Hochschule Ingolstadt'
-	},
-	alumniOf: {
-		'@type': 'CollegeOrUniversity',
-		name: 'Technische Hochschule Ingolstadt'
-	},
-	description:
-		'Robert Eggl ist ein deutscher Entwickler für KI- und Cloud-Anwendungen. Er ist Gründer von Neuland Next und Masterstudent für Cloud Applications & Security Engineering.'
-}
+const websiteJsonLd = createWebsiteJsonLd()
 
 export default function RootLayout({
 	children
@@ -93,13 +69,7 @@ export default function RootLayout({
 					title="RSS Feed for Robert Eggl's Blog"
 					href="https://eggl.dev/feed"
 				/>
-				<script
-					type="application/ld+json"
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: not a problem
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify(jsonLd).replace(/</g, '\\u003c')
-					}}
-				/>
+				<JsonLd data={websiteJsonLd} />
 			</head>
 			<body className="flex flex-col min-h-screen w-full max-w-screen overflow-x-hidden min-w-0">
 				<Provider>
