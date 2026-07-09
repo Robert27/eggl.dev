@@ -1,5 +1,6 @@
 import { Github, GithubIcon, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { PERSON_TAGLINE } from '@/lib/structured-data'
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear()
@@ -11,9 +12,7 @@ const Footer = () => {
 				<div className="flex flex-col md:flex-row items-center justify-between">
 					<div className="mb-6 md:mb-0">
 						<p className="font-mono font-bold text-xl">Robert Eggl</p>
-						<p className="text-muted-foreground">
-							Software Engineer & Master's Student
-						</p>
+						<p className="text-muted-foreground">{PERSON_TAGLINE}</p>
 					</div>
 
 					<div className="flex gap-4">

@@ -5,20 +5,22 @@ import { JsonLd } from './components/json-ld'
 import Navbar from './components/neo-navbar'
 import Footer from './components/sections/footer'
 import Provider from './contexts/provider'
-import { createWebsiteJsonLd } from './lib/structured-data'
+import {
+	createWebsiteJsonLd,
+	PERSON_DESCRIPTION,
+	PERSON_TAGLINE
+} from './lib/structured-data'
 
 export const metadata: Metadata = {
-	title: "Robert Eggl - Software Engineer & Master's Student",
-	description:
-		"Portfolio of Robert Eggl, Software Engineer and Master's Student specializing in Cloud Computing, Full-Stack Development, and AI.",
+	title: `Robert Eggl - ${PERSON_TAGLINE}`,
+	description: PERSON_DESCRIPTION,
 	keywords:
-		'Robert Eggl, Software Engineer, Cloud Computing, Full-Stack Development, Artificial Intelligence, Cloud Engineering, Open Source, Portfolio',
+		'Robert Eggl, SAP, Fullstack Developer, Business Process Consultant, Enterprise Software, Cloud Computing, Full-Stack Development, Artificial Intelligence, Open Source, Portfolio',
 	authors: [{ name: 'Robert Eggl' }],
 	robots: 'index, follow',
 	openGraph: {
-		title: "Robert Eggl - Software Engineer & Master's Student",
-		description:
-			"Portfolio of Robert Eggl, Software Engineer and Master's Student specializing in Cloud Computing, Full-Stack Development, and AI.",
+		title: `Robert Eggl - ${PERSON_TAGLINE}`,
+		description: PERSON_DESCRIPTION,
 		type: 'website',
 		url: 'https://eggl.dev'
 	},

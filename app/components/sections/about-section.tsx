@@ -59,25 +59,25 @@ const AboutSection = () => {
 	const aboutCards = [
 		{
 			icon: <Code size={24} className="text-foreground" />,
-			title: 'Cloud Engineering',
+			title: 'Enterprise Software',
 			description:
-				'Building scalable systems with Rust, Kubernetes, and modern architecture patterns.',
+				'Developing fullstack solutions at SAP with modern architectures and cloud-native technologies.',
 			bgColor: '#0090ce',
 			gradient: 'from-[#0090ce]/20 to-[#0090ce]/5'
 		},
 		{
 			icon: <GraduationCap size={24} className="text-foreground" />,
-			title: 'AI & Security',
+			title: 'Business Consulting',
 			description:
-				'Combining AI knowledge with security engineering principles.',
+				'Bridging business processes and technology as a business process consultant.',
 			bgColor: '#00a2a2',
 			gradient: 'from-[#00a2a2]/20 to-[#00a2a2]/5'
 		},
 		{
 			icon: <Laptop size={24} className="text-foreground" />,
-			title: 'Web Development',
+			title: 'Full-Stack Development',
 			description:
-				'Creating responsive applications with React, Next.js, and GraphQL.',
+				'Creating responsive applications with React, Next.js, TypeScript, and GraphQL.',
 			bgColor: '#ea3e94',
 			gradient: 'from-[#ea3e94]/20 to-[#ea3e94]/5'
 		},
@@ -210,21 +210,23 @@ const AboutSection = () => {
 
 						<div className="space-y-6 text-base md:text-lg">
 							<p>
-								Cloud Engineering specialist with expertise in Data Science and
-								modern web technologies. Currently pursuing an M.Sc. in Cloud
-								Applications and Security Engineering.
+								Fullstack Developer and Business Process Consultant at SAP, with
+								a background in cloud engineering, AI, and enterprise software.
+								I hold an M.Sc. in Cloud Applications and Security Engineering
+								and a B.Sc. in Artificial Intelligence from Technische
+								Hochschule Ingolstadt.
 							</p>
 
 							<p>
-								I build scalable solutions ranging from cloud-native
-								applications to data pipelines, focusing on robust architectures
-								and security principles.
+								I build scalable solutions—from enterprise business processes to
+								cloud-native applications—with a focus on robust architectures
+								and practical delivery.
 							</p>
 
 							<p>
-								Beyond my professional roles, I'm an active open-source
-								contributor and community builder through the Neuland Ingolstadt
-								e.V. student association.
+								Beyond my professional role, I'm an active open-source
+								contributor and helped build the Neuland Campus App, used by
+								thousands of students at TH Ingolstadt.
 							</p>
 						</div>
 

@@ -2,8 +2,13 @@ export const SITE_URL = 'https://eggl.dev'
 export const PERSON_ID = `${SITE_URL}/#person`
 export const WEBSITE_ID = `${SITE_URL}/#website`
 
-const PERSON_DESCRIPTION =
-	"Portfolio of Robert Eggl, Software Engineer and Master's Student specializing in Cloud Computing, Full-Stack Development, and AI."
+export const PERSON_JOB_TITLE =
+	'Fullstack Developer & Business Process Consultant'
+
+export const PERSON_TAGLINE = `${PERSON_JOB_TITLE} @ SAP`
+
+export const PERSON_DESCRIPTION =
+	'Portfolio of Robert Eggl, Fullstack Developer and Business Process Consultant at SAP, specializing in enterprise software, cloud-native development, and AI.'
 
 export const personSameAs = [
 	'https://www.linkedin.com/in/roberteggl',
@@ -86,11 +91,11 @@ export function createProfilePageJsonLd({
 		url: SITE_URL,
 		image: 'https://github.com/Robert27.png',
 		description: PERSON_DESCRIPTION,
-		jobTitle: "Software Engineer & Master's Student",
+		jobTitle: PERSON_JOB_TITLE,
 		sameAs: personSameAs,
 		worksFor: {
-			'@type': 'CollegeOrUniversity',
-			name: 'Technische Hochschule Ingolstadt'
+			'@type': 'Organization',
+			name: 'SAP'
 		},
 		alumniOf: {
 			'@type': 'CollegeOrUniversity',
@@ -115,7 +120,7 @@ export function createProfilePageJsonLd({
 		'@type': 'ProfilePage',
 		'@id': `${SITE_URL}/#profilepage`,
 		url: SITE_URL,
-		name: "Robert Eggl - Software Engineer & Master's Student",
+		name: `Robert Eggl - ${PERSON_TAGLINE}`,
 		dateCreated: '2020-10-01T00:00:00Z',
 		dateModified,
 		isPartOf: { '@id': WEBSITE_ID },

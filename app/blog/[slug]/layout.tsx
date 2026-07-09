@@ -1,6 +1,7 @@
 import { allBlogs } from 'contentlayer/generated'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { PERSON_JOB_TITLE } from '@/lib/structured-data'
 
 interface BlogPostLayoutProps {
 	children: React.ReactNode
@@ -84,7 +85,7 @@ const generateJsonLd = (post: (typeof allBlogs)[0]) => ({
 		'@type': 'Person',
 		name: 'Robert Eggl',
 		url: 'https://eggl.dev',
-		jobTitle: "Software Engineer & Master's Student"
+		jobTitle: PERSON_JOB_TITLE
 	},
 	publisher: {
 		'@type': 'Person',

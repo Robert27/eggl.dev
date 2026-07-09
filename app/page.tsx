@@ -13,7 +13,7 @@ import { createProfilePageJsonLd } from '@/lib/structured-data'
 
 export default async function HomePage() {
 	const NEO_MARQUEE_TEXT =
-		'Full-Stack Development • Cloud Engineering • Artificial Intelligence • Open Source • Cloud Native Technologies • Software Development • Data Engineering • Mobile Development'
+		'Full-Stack Development • SAP • Enterprise AI • Business Process Consulting • Cloud Engineering • Open Source • Software Development • Artificial Intelligence'
 
 	const posts = allBlogs.sort(
 		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
