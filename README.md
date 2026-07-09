@@ -1,6 +1,6 @@
 # Robert Eggl - Personal Website
 
-A modern, responsive personal portfolio website built with Next.js 15, showcasing my work as a Software Engineer and Master's Student specializing in Cloud Computing, Full-Stack Development, and AI.
+A modern, responsive personal portfolio website built with Next.js 15, showcasing my work as a Fullstack Developer and Business Process Consultant at SAP.
 
 ## 🚀 Features
 

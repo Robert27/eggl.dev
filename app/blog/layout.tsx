@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { PERSON_JOB_TITLE } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
 	title: 'The Blog. - Robert Eggl',
@@ -48,7 +49,7 @@ const jsonLd = {
 		'@type': 'Person',
 		name: 'Robert Eggl',
 		url: 'https://eggl.dev',
-		jobTitle: "Software Engineer & Master's Student"
+		jobTitle: PERSON_JOB_TITLE
 	},
 	publisher: {
 		'@type': 'Person',

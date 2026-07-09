@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import {
 	Award,
 	BookOpen,
+	Briefcase,
 	Calendar,
 	ChevronRight,
 	GraduationCap
@@ -47,9 +48,9 @@ const EducationSection = () => {
 		{
 			degree: 'M.Sc. Cloud Applications and Security Engineering',
 			institution: 'Technische Hochschule Ingolstadt',
-			period: '10/2024 - Present',
+			period: '10/2024 - 06/2026',
 			description:
-				'Specializing in Security Engineering, Cloud-Native Development, and practical industry projects.',
+				'Specialized in Security Engineering, Cloud-Native Development, and practical industry projects. Completed with a master thesis on simulation-based optimization at MBDA Deutschland.',
 			achievements: [
 				'IT Security: Focus on Security Engineering, Computer Forensics, and Network Security',
 				'Cloud-Native Development: Experience with Software Architectures, Virtualization, CI/CD, and Orchestration'
@@ -69,6 +70,22 @@ const EducationSection = () => {
 			],
 			icon: BookOpen,
 			color: '#00a2a2'
+		}
+	]
+
+	const experience = [
+		{
+			role: 'Fullstack Developer & Business Process Consultant',
+			company: 'SAP',
+			period: '03/2026 - Present',
+			description:
+				'Working in Service & Delivery, building enterprise fullstack solutions and consulting on business processes with a focus on cloud-native development and AI.',
+			achievements: [
+				'Fullstack development for enterprise software and service delivery',
+				'Business process consulting bridging technology and customer needs'
+			],
+			icon: Briefcase,
+			color: '#0070f2'
 		}
 	]
 
@@ -172,9 +189,79 @@ const EducationSection = () => {
 			</div>
 
 			<div className="container-custom relative z-10">
-				<SectionHeader number="04" title="Education" />
+				<SectionHeader number="04" title="Experience & Education" />
 
 				<div className="mt-20 space-y-12">
+					{experience.map((item, index) => (
+						<motion.div
+							key={`experience-${index}`}
+							className="relative backdrop-blur-md bg-background/50 p-8 border-2 border-foreground shadow-[8px_8px_0px_0px_rgba(250,250,250,0.8)] group hover:shadow-[12px_12px_0px_0px_rgba(250,250,250,0.8)]"
+							variants={cardVariants}
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, margin: '-100px' }}
+							custom={index}
+						>
+							<div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-foreground/20">
+								<div className="flex items-start md:items-center">
+									<div
+										className="p-3 mr-4 hidden md:flex"
+										style={{ backgroundColor: item.color }}
+									>
+										<item.icon size={24} className="text-foreground" />
+									</div>
+									<h3 className="font-mono text-2xl font-bold">{item.role}</h3>
+								</div>
+								<div className="flex items-center mt-2 md:mt-0 font-mono text-sm bg-foreground text-background py-1 px-3 self-start">
+									<Calendar size={16} className="mr-2" />
+									<span>{item.period}</span>
+								</div>
+							</div>
+
+							<div className="mb-6">
+								<p className="font-bold text-xl">{item.company}</p>
+							</div>
+
+							<div className="mb-8">
+								<p className="text-foreground/70 text-lg">{item.description}</p>
+							</div>
+
+							<div className="relative">
+								<div className="absolute -left-4 top-0 bottom-0 w-1 bg-accent" />
+								<h4 className="font-mono font-bold text-lg mb-4 flex items-center">
+									<Award
+										size={18}
+										className="mr-2"
+										style={{ color: item.color }}
+									/>
+									Key Responsibilities
+								</h4>
+								<ul className="space-y-4">
+									{item.achievements.map((achievement, achieveIndex) => (
+										<motion.li
+											key={achieveIndex}
+											className="flex items-start"
+											variants={listItemVariants}
+											initial="hidden"
+											whileInView="visible"
+											custom={achieveIndex}
+											viewport={{ once: true }}
+										>
+											<ChevronRight
+												size={16}
+												className="mr-2 mt-1"
+												style={{ color: item.color }}
+											/>
+											<span>{achievement}</span>
+										</motion.li>
+									))}
+								</ul>
+							</div>
+
+							<div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+						</motion.div>
+					))}
+
 					{education.map((item, index) => (
 						<motion.div
 							key={index}

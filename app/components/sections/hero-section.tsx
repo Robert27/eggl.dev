@@ -243,15 +243,13 @@ const HeroSection = () => {
 								transition={{ delay: 2, duration: 1 }}
 							>
 								<p className="text-xl text-foreground/90 max-w-2xl mb-12 leading-relaxed font-light">
-									Full Stack Developer focusing on{' '}
+									Fullstack Developer and Business Process Consultant at{' '}
+									<span className="text-accent font-normal">SAP</span>, building
+									enterprise solutions with a focus on{' '}
 									<span className="text-accent font-normal">
-										Cloud Computing
+										Cloud-Native Development
 									</span>{' '}
 									and{' '}
-									<span className="text-accent font-normal">
-										Software Development
-									</span>{' '}
-									with a passion for{' '}
 									<span className="text-accent font-normal">
 										Artificial Intelligence
 									</span>
@@ -335,7 +333,7 @@ const HeroSection = () => {
 											className="text-accent group-hover:scale-110 transition-transform"
 										/>
 									</div>
-									<span className="font-mono">Cloud Native</span>
+									<span className="font-mono">SAP</span>
 								</div>
 								<div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity" />
 							</motion.div>
@@ -354,7 +352,7 @@ const HeroSection = () => {
 											className="text-accent group-hover:scale-110 transition-transform"
 										/>
 									</div>
-									<span className="font-mono">AI/ML</span>
+									<span className="font-mono">Enterprise AI</span>
 								</div>
 								<div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity" />
 							</motion.div>
@@ -373,7 +371,7 @@ const HeroSection = () => {
 											className="text-accent group-hover:scale-110 transition-transform"
 										/>
 									</div>
-									<span className="font-mono">App Dev</span>
+									<span className="font-mono">Consulting</span>
 								</div>
 								<div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity" />
 							</motion.div>

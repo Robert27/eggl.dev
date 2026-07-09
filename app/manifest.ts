@@ -1,11 +1,11 @@
 import type { MetadataRoute } from 'next'
+import { PERSON_DESCRIPTION, PERSON_TAGLINE } from '@/lib/structured-data'
 
 export default function manifest(): MetadataRoute.Manifest {
 	return {
-		name: "Robert Eggl - Software Engineer & Master's Student",
+		name: `Robert Eggl - ${PERSON_TAGLINE}`,
 		short_name: 'Robert Eggl',
-		description:
-			"Portfolio of Robert Eggl, Software Engineer and Master's Student specializing in Cloud Computing, Full-Stack Development, and AI.",
+		description: PERSON_DESCRIPTION,
 		start_url: '/',
 		display: 'standalone',
 		background_color: '#000000',
