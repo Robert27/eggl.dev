@@ -1,0 +1,68 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:recommended",
+		"helpers:pinGitHubActionDigests"
+	],
+	"timezone": "UTC",
+	"labels": ["dependencies"],
+	"semanticCommits": "enabled",
+	"commitMessageLowerCase": "auto",
+	"schedule": ["before 6am on monday"],
+	"lockFileMaintenance": {
+		"enabled": true,
+		"schedule": ["before 6am on the first day of the month"]
+	},
+	"packageRules": [
+		{
+			"description": "Require dashboard approval for major dependency updates",
+			"matchUpdateTypes": ["major"],
+			"dependencyDashboardApproval": true
+		},
+		{
+			"description": "Keep Contentlayer packages in sync",
+			"matchManagers": ["bun"],
+			"groupName": "contentlayer",
+			"matchPackageNames": ["contentlayer2", "next-contentlayer2"]
+		},
+		{
+			"description": "Group React runtime and type packages",
+			"matchManagers": ["bun"],
+			"groupName": "react",
+			"matchPackageNames": [
+				"react",
+				"react-dom",
+				"@types/react",
+				"@types/react-dom"
+			]
+		},
+		{
+			"description": "Group Tailwind CSS packages",
+			"matchManagers": ["bun"],
+			"groupName": "tailwindcss",
+			"matchPackageNames": [
+				"tailwindcss",
+				"@tailwindcss/postcss",
+				"tailwindcss-animate",
+				"tailwind-merge",
+				"tw-animate-css"
+			]
+		},
+		{
+			"description": "Group Radix UI primitives",
+			"matchManagers": ["bun"],
+			"groupName": "radix-ui",
+			"matchPackageNames": ["/^@radix-ui//"]
+		},
+		{
+			"description": "Group GitHub Actions updates",
+			"matchManagers": ["github-actions"],
+			"groupName": "github actions"
+		},
+		{
+			"description": "Group Docker base image updates",
+			"matchManagers": ["dockerfile"],
+			"groupName": "docker"
+		}
+	]
+}
