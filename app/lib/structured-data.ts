@@ -12,7 +12,7 @@ export const PERSON_DESCRIPTION =
 
 export const personSameAs = [
 	'https://www.linkedin.com/in/roberteggl',
-	'https://github.com/Robert27',
+	'https://github.com/roberteggl',
 	'https://gitlab.com/roberteggl',
 	'https://x.com/roberteggl',
 	'https://bsky.app/profile/eggl.dev',
@@ -89,7 +89,7 @@ export function createProfilePageJsonLd({
 		alternateName: 'Robert27',
 		identifier: 'roberteggl',
 		url: SITE_URL,
-		image: 'https://github.com/Robert27.png',
+		image: 'https://github.com/roberteggl.png',
 		description: PERSON_DESCRIPTION,
 		jobTitle: PERSON_JOB_TITLE,
 		sameAs: personSameAs,

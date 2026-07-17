@@ -201,7 +201,7 @@ const ContactSection = () => {
 								</motion.a>
 
 								<motion.a
-									href="https://github.com/Robert27"
+									href="https://github.com/roberteggl"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center group bg-background p-4 border-2 border-foreground shadow-[4px_4px_0px_0px_rgba(250,250,250,0.8)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_rgba(250,250,250,0.8)]"
@@ -216,7 +216,7 @@ const ContactSection = () => {
 									<div className="flex-1">
 										<span className="block text-xl">GitHub</span>
 										<span className="text-foreground/70">
-											github.com/Robert27
+											github.com/roberteggl
 										</span>
 									</div>
 									<ArrowUpRight

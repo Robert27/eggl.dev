@@ -41,7 +41,7 @@ export async function getGitHubData(): Promise<GitHubData> {
 		'neuland-website',
 		'neuland.app-ical-service'
 	]
-	const GITHUB_USERNAME = 'Robert27'
+	const GITHUB_USERNAME = 'roberteggl'
 
 	const SIZE_WEIGHT = 0.5
 	const COUNT_WEIGHT = 0.5

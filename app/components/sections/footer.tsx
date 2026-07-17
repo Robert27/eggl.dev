@@ -17,7 +17,7 @@ const Footer = () => {
 
 					<div className="flex gap-4">
 						<a
-							href="https://github.com/Robert27"
+							href="https://github.com/roberteggl"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="neo-button p-3 !aspect-square flex items-center justify-center"
@@ -65,7 +65,7 @@ const Footer = () => {
 						</p>
 					</div>
 					<a
-						href={`https://github.com/Robert27/eggl.dev/commit/${gitSha}`}
+						href={`https://github.com/roberteggl/eggl.dev/commit/${gitSha}`}
 						target="_blank"
 						className="group"
 						rel="noopener noreferrer"

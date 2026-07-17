@@ -30,7 +30,7 @@ const Navbar = () => {
 	]
 
 	const socialLinks = [
-		{ icon: Github, href: 'https://github.com/Robert27', label: 'GitHub' },
+		{ icon: Github, href: 'https://github.com/roberteggl', label: 'GitHub' },
 		{
 			icon: Linkedin,
 			href: 'https://linkedin.com/in/roberteggl',

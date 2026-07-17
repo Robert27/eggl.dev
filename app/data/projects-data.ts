@@ -56,7 +56,7 @@ export const projects: Project[] = [
 			'Email Routing',
 			'Zero Trust'
 		],
-		github: 'https://github.com/Robert27/papra-email-proxy',
+		github: 'https://github.com/roberteggl/papra-email-proxy',
 		image: 'images/papra-email-proxy.webp',
 		category: 'tool',
 		showOnMain: false
@@ -66,7 +66,7 @@ export const projects: Project[] = [
 		description:
 			'A lightweight Go microservice that accepts Prometheus Alertmanager webhook v2 payloads and publishes retained MQTT status messages reflecting the highest active alert severity. Built for homelab observability stacks where you want alert state available to MQTT subscribers and automations.',
 		technologies: ['Go', 'Alertmanager', 'MQTT', 'Prometheus', 'Nix'],
-		github: 'https://github.com/Robert27/Alertmanager-Webhook-MQTT-Bridge',
+		github: 'https://github.com/roberteggl/Alertmanager-Webhook-MQTT-Bridge',
 		image: 'images/alertmanager-mqtt-bridge.webp',
 		category: 'tool',
 		showOnMain: false
@@ -76,7 +76,7 @@ export const projects: Project[] = [
 		description:
 			'My general-purpose helper CLI built with Go and Cobra. Distributed via Homebrew and GitHub Releases, with shell completions for bash, zsh, and fish. A small toolbox of commands I reach for across homelab, dev, and day-to-day workflows.',
 		technologies: ['Go', 'Cobra', 'CLI', 'Homebrew'],
-		github: 'https://github.com/Robert27/eggl-cli',
+		github: 'https://github.com/roberteggl/eggl-cli',
 		image: 'images/eggl-cli.webp',
 		category: 'tool',
 		showOnMain: false
@@ -92,7 +92,7 @@ export const projects: Project[] = [
 			'Build Caching',
 			'NPM Package'
 		],
-		github: 'https://github.com/Robert27/expo-github-cache',
+		github: 'https://github.com/roberteggl/expo-github-cache',
 		demo: 'https://www.npmjs.com/package/@eggl-js/expo-github-cache',
 		image: 'images/cache.webp',
 		category: 'tool',
@@ -144,7 +144,7 @@ export const projects: Project[] = [
 			'This personal portfolio website built with Next.js, featuring a modern neo-brutalist design with smooth animations and interactive elements. The site showcases my projects, skills, and experience in an engaging way.',
 		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
 		demo: 'https://eggl.dev',
-		github: 'https://github.com/Robert27/eggl.dev',
+		github: 'https://github.com/roberteggl/eggl.dev',
 		image: 'images/personal.webp',
 		category: 'web',
 		showOnMain: false
@@ -186,7 +186,7 @@ export const projects: Project[] = [
 			'To quickly retrieve the current meal plans of the TH Ingolstadt canteens, I developed a Home Assistant integration that fetches data from the Neuland API and exposes it via sensors. The integration also allows customization of locations and price groups.',
 		technologies: ['Home Assistant', 'Python', 'GraphQL'],
 		image: 'images/ha.webp',
-		github: 'https://github.com/Robert27/hacs-thi-mensa',
+		github: 'https://github.com/roberteggl/hacs-thi-mensa',
 		category: 'tool',
 		showOnMain: false
 	}
