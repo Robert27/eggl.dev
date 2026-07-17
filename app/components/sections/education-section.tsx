@@ -119,7 +119,7 @@ const EducationSection = () => {
 				style={{ y }}
 			>
 				<h2 className="font-mono font-black text-[20vw] leading-none opacity-[0.03] -mt-20 tracking-tighter">
-					EDUCATION
+					EXPERIENCE
 				</h2>
 			</motion.div>
 
