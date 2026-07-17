@@ -92,7 +92,7 @@ export const projects: Project[] = [
 			'Build Caching',
 			'NPM Package'
 		],
-		github: 'https://github.com/robert27/expo-github-cache',
+		github: 'https://github.com/Robert27/expo-github-cache',
 		demo: 'https://www.npmjs.com/package/@eggl-js/expo-github-cache',
 		image: 'images/cache.webp',
 		category: 'tool',
@@ -144,7 +144,7 @@ export const projects: Project[] = [
 			'This personal portfolio website built with Next.js, featuring a modern neo-brutalist design with smooth animations and interactive elements. The site showcases my projects, skills, and experience in an engaging way.',
 		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
 		demo: 'https://eggl.dev',
-		github: 'https://github.com/robert27/eggl.dev',
+		github: 'https://github.com/Robert27/eggl.dev',
 		image: 'images/personal.webp',
 		category: 'web',
 		showOnMain: false
@@ -186,7 +186,7 @@ export const projects: Project[] = [
 			'To quickly retrieve the current meal plans of the TH Ingolstadt canteens, I developed a Home Assistant integration that fetches data from the Neuland API and exposes it via sensors. The integration also allows customization of locations and price groups.',
 		technologies: ['Home Assistant', 'Python', 'GraphQL'],
 		image: 'images/ha.webp',
-		github: 'https://github.com/robert27/hacs-thi-mensa',
+		github: 'https://github.com/Robert27/hacs-thi-mensa',
 		category: 'tool',
 		showOnMain: false
 	}
