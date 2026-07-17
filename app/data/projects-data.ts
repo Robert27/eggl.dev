@@ -62,6 +62,26 @@ export const projects: Project[] = [
 		showOnMain: false
 	},
 	{
+		title: 'Alertmanager MQTT Bridge',
+		description:
+			'A lightweight Go microservice that accepts Prometheus Alertmanager webhook v2 payloads and publishes retained MQTT status messages reflecting the highest active alert severity. Built for homelab observability stacks where you want alert state available to MQTT subscribers and automations.',
+		technologies: ['Go', 'Alertmanager', 'MQTT', 'Prometheus', 'Nix'],
+		github: 'https://github.com/Robert27/Alertmanager-Webhook-MQTT-Bridge',
+		image: 'images/alertmanager-mqtt-bridge.webp',
+		category: 'tool',
+		showOnMain: false
+	},
+	{
+		title: 'eggl-cli',
+		description:
+			'My general-purpose helper CLI built with Go and Cobra. Distributed via Homebrew and GitHub Releases, with shell completions for bash, zsh, and fish. A small toolbox of commands I reach for across homelab, dev, and day-to-day workflows.',
+		technologies: ['Go', 'Cobra', 'CLI', 'Homebrew'],
+		github: 'https://github.com/Robert27/eggl-cli',
+		image: 'images/eggl-cli.webp',
+		category: 'tool',
+		showOnMain: false
+	},
+	{
 		title: 'Expo GitHub Cache',
 		description:
 			"A plugin that dramatically speeds up mobile app development by caching build files in GitHub Releases. Instead of waiting for full compilation every time, it reuses previously built versions when your code hasn't changed, saving significant development time.",
