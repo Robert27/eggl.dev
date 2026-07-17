@@ -47,6 +47,21 @@ export const projects: Project[] = [
 		showOnMain: false
 	},
 	{
+		title: 'Papra Email Proxy',
+		description:
+			'A production-ready fork of the official Papra email proxy - battle-tested with CI, tests, and first-class Cloudflare Zero Trust (Access) support. Forwards inbound email to your self-hosted Papra instance via Cloudflare Email Workers, with service-token auth so webhook calls work even when Papra sits behind Access.',
+		technologies: [
+			'TypeScript',
+			'Cloudflare Workers',
+			'Email Routing',
+			'Zero Trust'
+		],
+		github: 'https://github.com/Robert27/papra-email-proxy',
+		image: 'images/papra-email-proxy.webp',
+		category: 'tool',
+		showOnMain: false
+	},
+	{
 		title: 'Expo GitHub Cache',
 		description:
 			"A plugin that dramatically speeds up mobile app development by caching build files in GitHub Releases. Instead of waiting for full compilation every time, it reuses previously built versions when your code hasn't changed, saving significant development time.",

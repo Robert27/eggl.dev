@@ -218,8 +218,8 @@ const AboutSection = () => {
 							</p>
 
 							<p>
-								I build scalable solutions—from enterprise business processes to
-								cloud-native applications—with a focus on robust architectures
+								I build scalable solutions-from enterprise business processes to
+								cloud-native applications-with a focus on robust architectures
 								and practical delivery.
 							</p>
 

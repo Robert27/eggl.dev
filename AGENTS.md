@@ -2,7 +2,7 @@
 
 ## Cursor Cloud specific instructions
 
-This repo is a single Next.js 16 (App Router, Turbopack, React Compiler) personal portfolio website. There is no database, no docker-compose, and no monorepo — just one app at the repo root. Package manager is **Bun**.
+This repo is a single Next.js 16 (App Router, Turbopack, React Compiler) personal portfolio website. There is no database, no docker-compose, and no monorepo - just one app at the repo root. Package manager is **Bun**.
 
 ### Services
 
