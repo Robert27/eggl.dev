@@ -1,5 +1,5 @@
 'use client'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
 	ArrowUpRight,
 	ExternalLink,
@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { memo, useMemo, useRef, useState } from 'react'
+import { memo, useMemo, useState } from 'react'
 import SectionHeader from '@/components/section-header'
 import {
 	Breadcrumb,
@@ -28,6 +28,7 @@ import {
 } from '@/components/ui/tooltip'
 import {
 	getAllProjects,
+	getProjectImageSrc,
 	getProjectPath,
 	PROJECT_CATEGORY_COLORS,
 	type Project
@@ -40,13 +41,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
-	const cardRef = useRef(null)
-	const isInView = useInView(cardRef, {
-		once: true,
-		margin: '-50px 0px',
-		amount: 0.2
-	})
-
 	const cardVariants = {
 		hidden: {
 			opacity: 0,
@@ -69,11 +63,11 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 	if (viewMode === 'grid') {
 		return (
 			<motion.div
-				ref={cardRef}
 				className="group"
 				variants={cardVariants}
 				initial="hidden"
-				animate={isInView ? 'visible' : 'hidden'}
+				whileInView="visible"
+				viewport={{ once: false, margin: '-50px 0px', amount: 0.2 }}
 			>
 				<div className="neo-card p-0 overflow-hidden h-full flex flex-col">
 					<Link
@@ -81,7 +75,7 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 						className="relative overflow-hidden block"
 					>
 						<Image
-							src={project.image}
+							src={getProjectImageSrc(project.image)}
 							alt={`${project.title} project screenshot`}
 							className="w-full aspect-video transition-transform duration-500 object-cover group-hover:scale-105"
 							width={800}
@@ -192,11 +186,11 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 
 	return (
 		<motion.div
-			ref={cardRef}
 			className="neo-card p-6"
 			variants={cardVariants}
 			initial="hidden"
-			animate={isInView ? 'visible' : 'hidden'}
+			whileInView="visible"
+			viewport={{ once: false, margin: '-50px 0px', amount: 0.2 }}
 		>
 			<div className="flex flex-col md:flex-row gap-6">
 				<div className="md:w-1/3">
@@ -205,7 +199,7 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 						className="relative overflow-hidden neo-card p-0 block group/image"
 					>
 						<Image
-							src={project.image}
+							src={getProjectImageSrc(project.image)}
 							alt={`${project.title} project screenshot`}
 							className="w-full aspect-video object-cover transition-transform duration-500 group-hover/image:scale-105"
 							width={800}

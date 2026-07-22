@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import {
 	getAllProjects,
 	getProjectBySlug,
+	getProjectImageSrc,
 	getProjectPath,
 	getRelatedProjects,
 	PROJECT_CATEGORY_COLORS,
@@ -41,7 +42,7 @@ export default async function ProjectPage({
 			<div className="neo-card p-0 overflow-hidden mb-8">
 				<div className="relative">
 					<Image
-						src={project.image}
+						src={getProjectImageSrc(project.image)}
 						alt={`${project.title} project screenshot`}
 						className="w-full aspect-video object-cover"
 						width={1200}
@@ -132,7 +133,7 @@ export default async function ProjectPage({
 							>
 								<div className="relative overflow-hidden shrink-0 w-20 h-14 border border-neo-border">
 									<Image
-										src={relatedProject.image}
+										src={getProjectImageSrc(relatedProject.image)}
 										alt={`${relatedProject.title} project screenshot`}
 										className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
 										width={80}

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { memo, useRef } from 'react'
 import {
 	getFeaturedProjects,
+	getProjectImageSrc,
 	getProjectPath,
 	type Project
 } from '@/data/projects-data'
@@ -85,7 +86,7 @@ const ProjectCard = memo(({ project, index }: ProjectCardProps) => {
 						className="relative overflow-hidden group block"
 					>
 						<Image
-							src={project.image}
+							src={getProjectImageSrc(project.image)}
 							alt={`${project.title} project screenshot`}
 							className="w-full aspect-video transition-transform duration-500 object-cover group-hover:scale-102"
 							loading="lazy"

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getProjectBySlug } from '@/data/projects-data'
+import { getProjectBySlug, getProjectImageUrl } from '@/data/projects-data'
 import { PERSON_JOB_TITLE } from '@/lib/structured-data'
 
 interface ProjectLayoutProps {
@@ -23,7 +23,7 @@ export async function generateMetadata({
 		}
 	}
 
-	const imageUrl = `https://eggl.dev/${project.image}`
+	const imageUrl = getProjectImageUrl(project.image)
 
 	return {
 		title: `${project.title} - Robert Eggl`,
@@ -70,7 +70,7 @@ const generateJsonLd = (
 	applicationCategory: project.category,
 	operatingSystem: 'Web',
 	url: project.demo ?? `https://eggl.dev/projects/${project.slug}`,
-	image: `https://eggl.dev/${project.image}`,
+	image: getProjectImageUrl(project.image),
 	author: {
 		'@type': 'Person',
 		name: 'Robert Eggl',

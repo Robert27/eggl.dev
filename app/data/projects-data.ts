@@ -13,6 +13,12 @@ export interface Project {
 	showOnMain?: boolean
 }
 
+export const getProjectImageSrc = (image: string) =>
+	image.startsWith('/') ? image : `/${image}`
+
+export const getProjectImageUrl = (image: string) =>
+	`https://eggl.dev${getProjectImageSrc(image)}`
+
 export const PROJECT_CATEGORY_COLORS: Record<ProjectCategory, string> = {
 	mobile: 'bg-blue-500/20 border-blue-500/40',
 	web: 'bg-green-500/20 border-green-500/40',
@@ -38,7 +44,7 @@ export const projects: Project[] = [
 		technologies: ['React Native', 'Expo', 'TypeScript', 'CI/CD'],
 		github: 'https://github.com/neuland-ingolstadt/neuland.app-native',
 		demo: 'https://neuland.app',
-		image: 'images/neuland-next-app-light.webp',
+		image: '/images/neuland-next-app-light.webp',
 		category: 'mobile',
 		featured: true,
 		showOnMain: true
@@ -51,7 +57,7 @@ export const projects: Project[] = [
 		technologies: ['Rust', 'Next.js', 'TypeScript', 'Apple Wallet', 'QR Codes'],
 		github: 'https://github.com/neuland-ingolstadt/member-id',
 		demo: 'https://id.informatik.sexy',
-		image: 'images/member-id.webp',
+		image: '/images/member-id.webp',
 		category: 'fullstack',
 		featured: true,
 		showOnMain: true
@@ -64,7 +70,7 @@ export const projects: Project[] = [
 		technologies: ['Rust', 'Next.js', 'Redis', 'TypeScript'],
 		github: 'https://github.com/neuland-ingolstadt/campus-life-events',
 		demo: 'https://cl.neuland.ing',
-		image: 'images/cle.webp',
+		image: '/images/cle.webp',
 		category: 'fullstack',
 		showOnMain: false
 	},
@@ -82,7 +88,7 @@ export const projects: Project[] = [
 		],
 		github: 'https://github.com/neuland-ingolstadt/neuland-connect',
 		demo: 'https://connect.neuland.ing',
-		image: 'images/neuland-connect.webp',
+		image: '/images/neuland-connect.webp',
 		category: 'fullstack',
 		showOnMain: false
 	},
@@ -92,7 +98,7 @@ export const projects: Project[] = [
 		description:
 			"At e:fs TechHub, I contributed to the development of Trajectory Trace, a cutting-edge platform for realtime traffic data processing and analysis. My work focused on enhancing the system's scalability and performance in both Rust backend and Next.js frontend.",
 		technologies: ['Rust', 'Next.js', 'TypeScript', 'MQTT', 'Kafka'],
-		image: 'images/tt.webp',
+		image: '/images/tt.webp',
 		demo: 'https://city.dev.sdk-cloud.de/',
 		category: 'fullstack',
 		showOnMain: false
@@ -111,7 +117,7 @@ export const projects: Project[] = [
 			'Infrastructure'
 		],
 		github: 'https://github.com/neuland-ingolstadt/flux-infra',
-		image: 'images/k3s.webp',
+		image: '/images/k3s.webp',
 		category: 'tool',
 		showOnMain: false
 	},
@@ -123,7 +129,7 @@ export const projects: Project[] = [
 		technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Analytics'],
 		github: 'https://github.com/neuland-ingolstadt/neuland-website',
 		demo: 'https://neuland-ingolstadt.de',
-		image: 'images/neuland-website.webp',
+		image: '/images/neuland-website.webp',
 		category: 'web',
 		showOnMain: false
 	},
@@ -139,7 +145,7 @@ export const projects: Project[] = [
 			'Zero Trust'
 		],
 		github: 'https://github.com/roberteggl/papra-email-proxy',
-		image: 'images/papra-email-proxy.webp',
+		image: '/images/papra-email-proxy.webp',
 		category: 'tool',
 		showOnMain: false
 	},
@@ -150,7 +156,7 @@ export const projects: Project[] = [
 			'A lightweight Go microservice that accepts Prometheus Alertmanager webhook v2 payloads and publishes retained MQTT status messages reflecting the highest active alert severity. Built for homelab observability stacks where you want alert state available to MQTT subscribers and automations.',
 		technologies: ['Go', 'Alertmanager', 'MQTT', 'Prometheus', 'Nix'],
 		github: 'https://github.com/roberteggl/Alertmanager-Webhook-MQTT-Bridge',
-		image: 'images/alertmanager-mqtt-bridge.webp',
+		image: '/images/alertmanager-mqtt-bridge.webp',
 		category: 'tool',
 		showOnMain: false
 	},
@@ -161,7 +167,7 @@ export const projects: Project[] = [
 			'My general-purpose helper CLI built with Go and Cobra. Distributed via Homebrew and GitHub Releases, with shell completions for bash, zsh, and fish. A small toolbox of commands I reach for across homelab, dev, and day-to-day workflows.',
 		technologies: ['Go', 'Cobra', 'CLI', 'Homebrew'],
 		github: 'https://github.com/roberteggl/eggl-cli',
-		image: 'images/eggl-cli.webp',
+		image: '/images/eggl-cli.webp',
 		category: 'tool',
 		showOnMain: false
 	},
@@ -179,7 +185,7 @@ export const projects: Project[] = [
 		],
 		github: 'https://github.com/roberteggl/expo-github-cache',
 		demo: 'https://www.npmjs.com/package/@eggl-js/expo-github-cache',
-		image: 'images/cache.webp',
+		image: '/images/cache.webp',
 		category: 'tool',
 		featured: true,
 		showOnMain: true
@@ -192,7 +198,7 @@ export const projects: Project[] = [
 		technologies: ['Node.js', 'Apollo Server', 'GraphQL', 'PostgreSQL'],
 		github: 'https://github.com/neuland-ingolstadt/neuland.app-backend',
 		demo: 'https://api.neuland.app',
-		image: 'images/backend.png',
+		image: '/images/backend.png',
 		category: 'api',
 		showOnMain: false
 	},
@@ -204,7 +210,7 @@ export const projects: Project[] = [
 		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
 		demo: 'https://eggl.dev',
 		github: 'https://github.com/roberteggl/eggl.dev',
-		image: 'images/personal.webp',
+		image: '/images/personal.webp',
 		category: 'web',
 		showOnMain: false
 	},
@@ -216,7 +222,7 @@ export const projects: Project[] = [
 		technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Nextra'],
 		github: 'https://github.com/neuland-ingolstadt/neuland.app-docs',
 		demo: 'https://neuland.app',
-		image: 'images/next-docs.webp',
+		image: '/images/next-docs.webp',
 		category: 'web',
 		showOnMain: false
 	},
@@ -227,7 +233,7 @@ export const projects: Project[] = [
 			'At e:fs TechHub, I developed the product page for Trajectory Trace, showcasing its features and benefits. It combines a Docusaurus-powered documentation site with a custom React frontpage, delivering a seamless user experience.',
 		technologies: ['React', 'Docusaurus', 'TypeScript', 'CSS'],
 		demo: 'https://city.dev.sdk-cloud.de/docs/',
-		image: 'images/ttd.webp',
+		image: '/images/ttd.webp',
 		category: 'web',
 		showOnMain: false
 	},
@@ -237,7 +243,7 @@ export const projects: Project[] = [
 		description:
 			'To quickly retrieve the current meal plans of the TH Ingolstadt canteens, I developed a Home Assistant integration that fetches data from the Neuland API and exposes it via sensors. The integration also allows customization of locations and price groups.',
 		technologies: ['Home Assistant', 'Python', 'GraphQL'],
-		image: 'images/ha.webp',
+		image: '/images/ha.webp',
 		github: 'https://github.com/roberteggl/hacs-thi-mensa',
 		category: 'tool',
 		showOnMain: false
