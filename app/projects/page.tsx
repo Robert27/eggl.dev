@@ -1,6 +1,13 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
-import { ExternalLink, Github, Grid, Home, List } from 'lucide-react'
+import {
+	ArrowUpRight,
+	ExternalLink,
+	Github,
+	Grid,
+	Home,
+	List
+} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { memo, useMemo, useRef, useState } from 'react'
@@ -13,7 +20,18 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
-import { getAllProjects, type Project } from '@/data/projects-data'
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger
+} from '@/components/ui/tooltip'
+import {
+	getAllProjects,
+	getProjectPath,
+	PROJECT_CATEGORY_COLORS,
+	type Project
+} from '@/data/projects-data'
 
 interface ProjectCardProps {
 	project: Project
@@ -46,13 +64,7 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 		}
 	}
 
-	const categoryColors = {
-		mobile: 'bg-blue-500/20 border-blue-500/40',
-		web: 'bg-green-500/20 border-green-500/40',
-		api: 'bg-purple-500/20 border-purple-500/40',
-		tool: 'bg-orange-500/20 border-orange-500/40',
-		fullstack: 'bg-red-500/20 border-red-500/40'
-	}
+	const categoryColors = PROJECT_CATEGORY_COLORS
 
 	if (viewMode === 'grid') {
 		return (
@@ -64,7 +76,10 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 				animate={isInView ? 'visible' : 'hidden'}
 			>
 				<div className="neo-card p-0 overflow-hidden h-full flex flex-col">
-					<div className="relative overflow-hidden">
+					<Link
+						href={getProjectPath(project)}
+						className="relative overflow-hidden block"
+					>
 						<Image
 							src={project.image}
 							alt={`${project.title} project screenshot`}
@@ -90,14 +105,16 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 								</span>
 							</div>
 						)}
-					</div>
+					</Link>
 
 					<div className="p-6 flex-1 flex flex-col">
-						<h3 className="font-mono text-xl font-bold mb-3 group-hover:text-accent transition-colors">
-							{project.title}
-						</h3>
+						<Link href={getProjectPath(project)}>
+							<h3 className="font-mono text-xl font-bold mb-3 group-hover:text-accent transition-colors">
+								{project.title}
+							</h3>
+						</Link>
 
-						<p className="text-muted-foreground text-sm mb-4 flex-1">
+						<p className="text-muted-foreground text-sm mb-4 flex-1 line-clamp-4">
 							{project.description}
 						</p>
 
@@ -114,13 +131,37 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 								</span>
 							))}
 							{project.technologies.length > 3 && (
-								<span className="px-2 py-1 text-xs font-mono border relative bg-tertiary/20 border-tertiary/40">
-									+{project.technologies.length - 3}
-								</span>
+								<Tooltip>
+									<TooltipTrigger asChild>
+										<span className="px-2 py-1 text-xs font-mono border relative bg-tertiary/20 border-tertiary/40 cursor-default">
+											+{project.technologies.length - 3}
+										</span>
+									</TooltipTrigger>
+									<TooltipContent side="top">
+										<div className="flex flex-wrap gap-1.5">
+											{project.technologies.slice(3).map((tech) => (
+												<span
+													key={tech}
+													className="px-2 py-0.5 text-xs font-mono border bg-tertiary/20 border-tertiary/40"
+												>
+													{tech}
+												</span>
+											))}
+										</div>
+									</TooltipContent>
+								</Tooltip>
 							)}
 						</div>
 
-						<div className="flex gap-2 mt-auto">
+						<div className="flex flex-wrap gap-2 mt-auto">
+							<Link
+								href={getProjectPath(project)}
+								className="neo-button p-2 flex items-center text-sm"
+							>
+								<ArrowUpRight size={16} />
+								<span className="ml-1">Details</span>
+							</Link>
+
 							{project.github && (
 								<a
 									href={project.github}
@@ -159,21 +200,28 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 		>
 			<div className="flex flex-col md:flex-row gap-6">
 				<div className="md:w-1/3">
-					<div className="relative overflow-hidden neo-card p-0">
+					<Link
+						href={getProjectPath(project)}
+						className="relative overflow-hidden neo-card p-0 block group/image"
+					>
 						<Image
 							src={project.image}
 							alt={`${project.title} project screenshot`}
-							className="w-full aspect-video object-cover"
+							className="w-full aspect-video object-cover transition-transform duration-500 group-hover/image:scale-105"
 							width={800}
 							height={450}
 							loading="lazy"
 						/>
-					</div>
+					</Link>
 				</div>
 
 				<div className="md:w-2/3 flex flex-col">
-					<div className="flex items-start justify-between mb-3">
-						<h3 className="font-mono text-2xl font-bold">{project.title}</h3>
+					<div className="flex items-start justify-between mb-3 gap-4">
+						<Link href={getProjectPath(project)}>
+							<h3 className="font-mono text-2xl font-bold hover:text-accent transition-colors">
+								{project.title}
+							</h3>
+						</Link>
 						<div className="flex gap-2">
 							<span
 								className={`px-3 py-1 text-xs font-mono border-2 ${categoryColors[project.category]}`}
@@ -206,7 +254,15 @@ const ProjectCard = memo(({ project, index, viewMode }: ProjectCardProps) => {
 						))}
 					</div>
 
-					<div className="flex gap-3">
+					<div className="flex flex-wrap gap-3">
+						<Link
+							href={getProjectPath(project)}
+							className="neo-button p-2 flex items-center"
+						>
+							<ArrowUpRight size={18} />
+							<span className="ml-2">Details</span>
+						</Link>
+
 						{project.github && (
 							<a
 								href={project.github}
@@ -288,127 +344,129 @@ const ProjectsPage = () => {
 	}, [selectedCategory, searchTerm])
 
 	return (
-		<div className="min-h-screen bg-background">
-			<div className="container-custom py-8 mt-12">
-				<Breadcrumb>
-					<BreadcrumbList className="font-mono">
-						<BreadcrumbItem>
-							<BreadcrumbLink asChild>
-								<Link
-									href="/"
-									className="flex items-center gap-1 hover:text-accent transition-colors duration-200"
-								>
-									<Home size={14} />
-									<span>Home</span>
-								</Link>
-							</BreadcrumbLink>
-						</BreadcrumbItem>
-						<BreadcrumbSeparator />
-						<BreadcrumbItem>
-							<BreadcrumbPage>Projects</BreadcrumbPage>
-						</BreadcrumbItem>
-					</BreadcrumbList>
-				</Breadcrumb>
-				<div className="fixed top-0 left-0 w-full overflow-hidden pointer-events-none select-none">
-					<h2 className="font-mono font-black text-[25vw] leading-none opacity-[0.03] -mt-16 tracking-tighter">
-						PROJECTS
-					</h2>
-				</div>
-				<div className="flex items-center justify-end mb-8">
-					<div className="flex items-center gap-2">
-						<button
-							type="button"
-							onClick={() => setViewMode('grid')}
-							className={`p-2 border-2 ${viewMode === 'grid' ? 'bg-accent border-accent' : 'bg-background border-neo-border'} shadow-neo`}
-						>
-							<Grid size={18} />
-						</button>
-						<button
-							type="button"
-							onClick={() => setViewMode('list')}
-							className={`p-2 border-2 ${viewMode === 'list' ? 'bg-accent border-accent' : 'bg-background border-neo-border'} shadow-neo`}
-						>
-							<List size={18} />
-						</button>
+		<TooltipProvider delayDuration={200}>
+			<div className="min-h-screen bg-background">
+				<div className="container-custom py-8 mt-12">
+					<Breadcrumb>
+						<BreadcrumbList className="font-mono">
+							<BreadcrumbItem>
+								<BreadcrumbLink asChild>
+									<Link
+										href="/"
+										className="flex items-center gap-1 hover:text-accent transition-colors duration-200"
+									>
+										<Home size={14} />
+										<span>Home</span>
+									</Link>
+								</BreadcrumbLink>
+							</BreadcrumbItem>
+							<BreadcrumbSeparator />
+							<BreadcrumbItem>
+								<BreadcrumbPage>Projects</BreadcrumbPage>
+							</BreadcrumbItem>
+						</BreadcrumbList>
+					</Breadcrumb>
+					<div className="fixed top-0 left-0 w-full overflow-hidden pointer-events-none select-none">
+						<h2 className="font-mono font-black text-[25vw] leading-none opacity-[0.03] -mt-16 tracking-tighter">
+							PROJECTS
+						</h2>
 					</div>
-				</div>
-
-				<SectionHeader number="01" title="All Projects" mbSize="mb-8" />
-
-				<h1 className="sr-only">Projects - Robert Eggl</h1>
-
-				<div className="mb-8">
-					<div className="flex items-center gap-5">
-						<div className="flex flex-wrap gap-3">
-							{categories.map((category) => (
-								<button
-									type="button"
-									key={category.id}
-									onClick={() => setSelectedCategory(category.id)}
-									className={`px-4 py-2 text-sm font-mono border-2 transition-all ${
-										selectedCategory === category.id
-											? 'bg-accent border-accent text-accent-foreground'
-											: 'bg-background border-neo-border hover:border-accent'
-									} shadow-neo-thin`}
-								>
-									{category.label} ({category.count})
-								</button>
-							))}
+					<div className="flex items-center justify-end mb-8">
+						<div className="flex items-center gap-2">
+							<button
+								type="button"
+								onClick={() => setViewMode('grid')}
+								className={`p-2 border-2 ${viewMode === 'grid' ? 'bg-accent border-accent' : 'bg-background border-neo-border'} shadow-neo`}
+							>
+								<Grid size={18} />
+							</button>
+							<button
+								type="button"
+								onClick={() => setViewMode('list')}
+								className={`p-2 border-2 ${viewMode === 'list' ? 'bg-accent border-accent' : 'bg-background border-neo-border'} shadow-neo`}
+							>
+								<List size={18} />
+							</button>
 						</div>
 					</div>
-				</div>
 
-				<div className="mb-6">
-					<p className="text-muted-foreground font-mono">
-						Showing {filteredProjects.length} of {projects.length} projects
-					</p>
-				</div>
-			</div>
+					<SectionHeader number="01" title="All Projects" mbSize="mb-8" />
 
-			<div className="container-custom pb-16">
-				{viewMode === 'grid' ? (
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{filteredProjects.map((project, index) => (
-							<ProjectCard
-								key={index}
-								project={project}
-								index={index}
-								viewMode={viewMode}
-							/>
-						))}
+					<h1 className="sr-only">Projects - Robert Eggl</h1>
+
+					<div className="mb-8">
+						<div className="flex items-center gap-5">
+							<div className="flex flex-wrap gap-3">
+								{categories.map((category) => (
+									<button
+										type="button"
+										key={category.id}
+										onClick={() => setSelectedCategory(category.id)}
+										className={`px-4 py-2 text-sm font-mono border-2 transition-all ${
+											selectedCategory === category.id
+												? 'bg-accent border-accent text-accent-foreground'
+												: 'bg-background border-neo-border hover:border-accent'
+										} shadow-neo-thin`}
+									>
+										{category.label} ({category.count})
+									</button>
+								))}
+							</div>
+						</div>
 					</div>
-				) : (
-					<div className="space-y-6">
-						{filteredProjects.map((project, index) => (
-							<ProjectCard
-								key={index}
-								project={project}
-								index={index}
-								viewMode={viewMode}
-							/>
-						))}
-					</div>
-				)}
 
-				{filteredProjects.length === 0 && (
-					<div className="text-center py-16">
-						<p className="text-muted-foreground font-mono text-lg">
-							No projects found matching your criteria.
+					<div className="mb-6">
+						<p className="text-muted-foreground font-mono">
+							Showing {filteredProjects.length} of {projects.length} projects
 						</p>
-						<button
-							type="button"
-							onClick={() => {
-								setSelectedCategory('all')
-								setSearchTerm('')
-							}}
-							className="neo-button mt-4"
-						>
-							Clear Filters
-						</button>
 					</div>
-				)}
+				</div>
+
+				<div className="container-custom pb-16">
+					{viewMode === 'grid' ? (
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+							{filteredProjects.map((project, index) => (
+								<ProjectCard
+									key={project.slug}
+									project={project}
+									index={index}
+									viewMode={viewMode}
+								/>
+							))}
+						</div>
+					) : (
+						<div className="space-y-6">
+							{filteredProjects.map((project, index) => (
+								<ProjectCard
+									key={project.slug}
+									project={project}
+									index={index}
+									viewMode={viewMode}
+								/>
+							))}
+						</div>
+					)}
+
+					{filteredProjects.length === 0 && (
+						<div className="text-center py-16">
+							<p className="text-muted-foreground font-mono text-lg">
+								No projects found matching your criteria.
+							</p>
+							<button
+								type="button"
+								onClick={() => {
+									setSelectedCategory('all')
+									setSearchTerm('')
+								}}
+								className="neo-button mt-4"
+							>
+								Clear Filters
+							</button>
+						</div>
+					)}
+				</div>
 			</div>
-		</div>
+		</TooltipProvider>
 	)
 }
 

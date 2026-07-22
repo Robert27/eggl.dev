@@ -1,10 +1,14 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
-import { ArrowRight, ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { memo, useRef } from 'react'
-import { getFeaturedProjects, type Project } from '@/data/projects-data'
+import {
+	getFeaturedProjects,
+	getProjectPath,
+	type Project
+} from '@/data/projects-data'
 import SectionHeader from '../section-header'
 
 interface ProjectCardProps {
@@ -76,7 +80,10 @@ const ProjectCard = memo(({ project, index }: ProjectCardProps) => {
 				transition={{ delay: 0.2 }}
 			>
 				<div className="relative neo-card p-0 overflow-hidden mx-0 md:mx-4">
-					<div className="relative overflow-hidden group">
+					<Link
+						href={getProjectPath(project)}
+						className="relative overflow-hidden group block"
+					>
 						<Image
 							src={project.image}
 							alt={`${project.title} project screenshot`}
@@ -86,7 +93,7 @@ const ProjectCard = memo(({ project, index }: ProjectCardProps) => {
 							height={450}
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-					</div>
+					</Link>
 				</div>
 			</motion.div>
 
@@ -102,7 +109,12 @@ const ProjectCard = memo(({ project, index }: ProjectCardProps) => {
 						variants={itemVariants}
 					>
 						<span className="inline-block w-3 h-3 mr-3 bg-accent" />
-						{project.title}
+						<Link
+							href={getProjectPath(project)}
+							className="hover:text-accent transition-colors"
+						>
+							{project.title}
+						</Link>
 					</motion.h3>
 
 					<motion.p className="text-muted-foreground" variants={itemVariants}>
@@ -123,23 +135,30 @@ const ProjectCard = memo(({ project, index }: ProjectCardProps) => {
 						))}
 					</motion.div>
 
-					<motion.div
-						className="flex gap-3 cursor-pointer"
-						variants={itemVariants}
-					>
-						<a
-							href={project.github}
-							className="neo-button p-2 !flex items-center"
-							aria-label={`GitHub repository for ${project.title}`}
+					<motion.div className="flex flex-wrap gap-3" variants={itemVariants}>
+						<Link
+							href={getProjectPath(project)}
+							className="neo-button p-2 flex items-center"
 						>
-							<Github size={18} />
-							<span className="ml-2">Code</span>
-						</a>
+							<ArrowUpRight size={18} />
+							<span className="ml-2">Details</span>
+						</Link>
+
+						{project.github && (
+							<a
+								href={project.github}
+								className="neo-button p-2 flex items-center"
+								aria-label={`GitHub repository for ${project.title}`}
+							>
+								<Github size={18} />
+								<span className="ml-2">Code</span>
+							</a>
+						)}
 
 						{project.demo && (
 							<a
 								href={project.demo}
-								className="neo-button p-2 !flex items-center cursor-pointer"
+								className="neo-button p-2 flex items-center"
 								aria-label={`Live demo for ${project.title}`}
 							>
 								<ExternalLink size={18} />
@@ -184,7 +203,7 @@ const ProjectsSection = () => {
 				<div className="space-y-16 md:space-y-10">
 					{featuredProjects.map((project, index) => (
 						<div
-							key={index}
+							key={project.slug}
 							className="min-h-[400px] md:h-56 flex items-center justify-center"
 						>
 							<ProjectCard project={project} index={index} />

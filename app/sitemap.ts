@@ -1,5 +1,6 @@
 import { allBlogs } from 'contentlayer/generated'
 import type { MetadataRoute } from 'next'
+import { getAllProjects } from '@/data/projects-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = 'https://eggl.dev'
@@ -52,5 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		priority: 0.6
 	}))
 
-	return [...staticPages, ...blogPosts]
+	const projectPages = getAllProjects().map((project) => ({
+		url: `${baseUrl}/projects/${project.slug}`,
+		lastModified: new Date(),
+		changeFrequency: 'monthly' as const,
+		priority: 0.7
+	}))
+
+	return [...staticPages, ...blogPosts, ...projectPages]
 }
