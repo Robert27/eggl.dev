@@ -47,6 +47,61 @@ export const projects: Project[] = [
 		showOnMain: false
 	},
 	{
+		title: 'Neuland Connect',
+		description:
+			'A self-service member portal for Neuland Ingolstadt that bridges Authentik and GitHub organization management. Members sign in via OIDC, link their GitHub account from a dashboard, and a GitHub App automatically sends org invites and reconciles membership on a schedule - keeping the organization in sync with club members without a local user database or GitHub Enterprise SSO.',
+		technologies: [
+			'TanStack Start',
+			'React',
+			'TypeScript',
+			'Authentik',
+			'GitHub API'
+		],
+		github: 'https://github.com/neuland-ingolstadt/neuland-connect',
+		demo: 'https://connect.neuland.ing',
+		image: 'images/neuland-connect.webp',
+		category: 'fullstack',
+		showOnMain: false
+	},
+	{
+		title: 'Trajectory Trace',
+		description:
+			"At e:fs TechHub, I contributed to the development of Trajectory Trace, a cutting-edge platform for realtime traffic data processing and analysis. My work focused on enhancing the system's scalability and performance in both Rust backend and Next.js frontend.",
+		technologies: ['Rust', 'Next.js', 'TypeScript', 'MQTT', 'Kafka'],
+		image: 'images/tt.webp',
+		demo: 'https://city.dev.sdk-cloud.de/',
+		category: 'fullstack',
+		showOnMain: false
+	},
+	{
+		title: 'Neuland Kubernetes',
+		description:
+			'Built and manage the self-hosted K3s infrastructure for Neuland services using GitOps principles. The infrastructure handles deployment automation, monitoring, and scaling for all Neuland applications, ensuring high availability and efficient resource management.',
+		technologies: [
+			'Kubernetes',
+			'K3s',
+			'GitOps',
+			'FluxCD',
+			'Docker',
+			'Infrastructure'
+		],
+		github: 'https://github.com/neuland-ingolstadt/flux-infra',
+		image: 'images/k3s.webp',
+		category: 'tool',
+		showOnMain: false
+	},
+	{
+		title: 'Neuland Website',
+		description:
+			'The main landing page for the Neuland club, built with Next.js and Tailwind CSS. It serves as a showcase for our projects and provides information about the club and its events. I utilized a retro terminal style to effectively present our values, incorporating hidden features to enhance its appeal.',
+		technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Analytics'],
+		github: 'https://github.com/neuland-ingolstadt/neuland-website',
+		demo: 'https://neuland-ingolstadt.de',
+		image: 'images/neuland-website.webp',
+		category: 'web',
+		showOnMain: false
+	},
+	{
 		title: 'Papra Email Proxy',
 		description:
 			'A production-ready fork of the official Papra email proxy - battle-tested with CI, tests, and first-class Cloudflare Zero Trust (Access) support. Forwards inbound email to your self-hosted Papra instance via Cloudflare Email Workers, with service-token auth so webhook calls work even when Papra sits behind Access.',
@@ -111,34 +166,6 @@ export const projects: Project[] = [
 		showOnMain: false
 	},
 	{
-		title: 'Neuland Kubernetes',
-		description:
-			'Built and manage the self-hosted K3s infrastructure for Neuland services using GitOps principles. The infrastructure handles deployment automation, monitoring, and scaling for all Neuland applications, ensuring high availability and efficient resource management.',
-		technologies: [
-			'Kubernetes',
-			'K3s',
-			'GitOps',
-			'FluxCD',
-			'Docker',
-			'Infrastructure'
-		],
-		github: 'https://github.com/neuland-ingolstadt/flux-infra',
-		image: 'images/k3s.webp',
-		category: 'tool',
-		showOnMain: false
-	},
-	{
-		title: 'Neuland Website',
-		description:
-			'The main landing page for the Neuland club, built with Next.js and Tailwind CSS. It serves as a showcase for our projects and provides information about the club and its events. I utilized a retro terminal style to effectively present our values, incorporating hidden features to enhance its appeal.',
-		technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Analytics'],
-		github: 'https://github.com/neuland-ingolstadt/neuland-website',
-		demo: 'https://neuland-ingolstadt.de',
-		image: 'images/neuland-website.webp',
-		category: 'web',
-		showOnMain: false
-	},
-	{
 		title: 'Personal Website',
 		description:
 			'This personal portfolio website built with Next.js, featuring a modern neo-brutalist design with smooth animations and interactive elements. The site showcases my projects, skills, and experience in an engaging way.',
@@ -168,16 +195,6 @@ export const projects: Project[] = [
 		demo: 'https://city.dev.sdk-cloud.de/docs/',
 		image: 'images/ttd.webp',
 		category: 'web',
-		showOnMain: false
-	},
-	{
-		title: 'Trajectory Trace',
-		description:
-			"At e:fs TechHub, I contributed to the development of Trajectory Trace, a cutting-edge platform for realtime traffic data processing and analysis. My work focused on enhancing the system's scalability and performance in both Rust backend and Next.js frontend.",
-		technologies: ['Rust', 'Next.js', 'TypeScript', 'MQTT', 'Kafka'],
-		image: 'images/tt.webp',
-		demo: 'https://city.dev.sdk-cloud.de/',
-		category: 'fullstack',
 		showOnMain: false
 	},
 	{
