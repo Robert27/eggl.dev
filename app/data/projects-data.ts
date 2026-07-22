@@ -134,33 +134,6 @@ export const projects: Project[] = [
 		showOnMain: false
 	},
 	{
-		slug: 'papra-email-proxy',
-		title: 'Papra Email Proxy',
-		description:
-			'A production-ready fork of the official Papra email proxy - battle-tested with CI, tests, and first-class Cloudflare Zero Trust (Access) support. Forwards inbound email to your self-hosted Papra instance via Cloudflare Email Workers, with service-token auth so webhook calls work even when Papra sits behind Access.',
-		technologies: [
-			'TypeScript',
-			'Cloudflare Workers',
-			'Email Routing',
-			'Zero Trust'
-		],
-		github: 'https://github.com/roberteggl/papra-email-proxy',
-		image: '/images/papra-email-proxy.webp',
-		category: 'tool',
-		showOnMain: false
-	},
-	{
-		slug: 'alertmanager-mqtt-bridge',
-		title: 'Alertmanager MQTT Bridge',
-		description:
-			'A lightweight Go microservice that accepts Prometheus Alertmanager webhook v2 payloads and publishes retained MQTT status messages reflecting the highest active alert severity. Built for homelab observability stacks where you want alert state available to MQTT subscribers and automations.',
-		technologies: ['Go', 'Alertmanager', 'MQTT', 'Prometheus', 'Nix'],
-		github: 'https://github.com/roberteggl/Alertmanager-Webhook-MQTT-Bridge',
-		image: '/images/alertmanager-mqtt-bridge.webp',
-		category: 'tool',
-		showOnMain: false
-	},
-	{
 		slug: 'eggl-cli',
 		title: 'eggl-cli',
 		description:
@@ -245,6 +218,33 @@ export const projects: Project[] = [
 		technologies: ['Home Assistant', 'Python', 'GraphQL'],
 		image: '/images/ha.webp',
 		github: 'https://github.com/roberteggl/hacs-thi-mensa',
+		category: 'tool',
+		showOnMain: false
+	},
+	{
+		slug: 'papra-email-proxy',
+		title: 'Papra Email Proxy',
+		description:
+			'A production-ready fork of the official Papra email proxy - battle-tested with CI, tests, and first-class Cloudflare Zero Trust (Access) support. Forwards inbound email to your self-hosted Papra instance via Cloudflare Email Workers, with service-token auth so webhook calls work even when Papra sits behind Access.',
+		technologies: [
+			'TypeScript',
+			'Cloudflare Workers',
+			'Email Routing',
+			'Zero Trust'
+		],
+		github: 'https://github.com/roberteggl/papra-email-proxy',
+		image: '/images/papra-email-proxy.webp',
+		category: 'tool',
+		showOnMain: false
+	},
+	{
+		slug: 'alertmanager-mqtt-bridge',
+		title: 'Alertmanager MQTT Bridge',
+		description:
+			'A lightweight Go microservice that accepts Prometheus Alertmanager webhook v2 payloads and publishes retained MQTT status messages reflecting the highest active alert severity. Built for homelab observability stacks where you want alert state available to MQTT subscribers and automations.',
+		technologies: ['Go', 'Alertmanager', 'MQTT', 'Prometheus', 'Nix'],
+		github: 'https://github.com/roberteggl/Alertmanager-Webhook-MQTT-Bridge',
+		image: '/images/alertmanager-mqtt-bridge.webp',
 		category: 'tool',
 		showOnMain: false
 	}
